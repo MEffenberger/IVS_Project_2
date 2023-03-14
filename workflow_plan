@@ -1,0 +1,51 @@
+Jako programovací jazyk jsme zvolili C/C++ a produkt bude vyvíjen pro operační systém Linux.
+
+Pro komunikaci byl zvolen soukromý server na Discordu. Vzhedem k tomu, že se pravidelně potkáváme na fakultě, nebyla nastavena žádná pravidla pro komunikaci a v případě delší absence a blížících se termínů se očekává aktivní komunikace přes DC, popř. týmovou skupinu na Messengeru, s ostatními členy týmu.  
+
+Soukromý repozitář pro správu verzí (a možnost náhledu vyučujícím, pozvánka byla odeslána) je založen na platformě [github.com](https://github.com/MEffenberger/IVS_Project_2).
+
+Rozdělení úkolů (*+ kontrola*):
+
+- Napsání sady testů, automatizace: Adam, Dominik (*+ Marek*)
+- Knihovna s matematickými funkcemi, parser: Marek (*+ Samuel*)
+- Profiling: Samuel (*+ Marek*)
+- Programová dokumentace: Marek, Samuel
+- Grafické uživatelské rozhraní + nápověda: Dominik (*+ všichni*)
+- Makefile: Adam (*+ všichni*)
+- Uživatelská dokumentace: Adam (*+ Dominik*)
+- postup instalace a odinstalace programu pomocí instalátoru (odinstalátoru) + návod pro manuální (od)instalaci: Samuel (*+ Marek*)
+- Mockup uživatelského rozhraní další verze kalkulačky (plánované do budoucna): všichni
+
+Časový plán je rozdělen na 6 týdnů:
+
+1. týden - do 19.3.
+    
+    Plán, nastudování automatizace testů (CI/CD Github Actions)
+    
+2. týden - do 26.3.
+    
+    Zhotovení testů matematické knihovny
+    
+3. týden - do 2.4.
+    
+    GUI design kalkulačky
+    
+    Knihovna s matematickými funkcemi, parser
+    
+4. týden - do 9.4.
+    
+    Profiling, optimalizace, GUI development
+    
+5. týden - do 16.4.
+    
+    Integrace a debugging
+    
+6. týden - do 23.4.
+    
+    Finální meeting, mockup budoicích verzí
+    
+
+25.4.  Product delivery
+
+
+V průběhu 4./5. týdne proběhne živý meeting pro aktualizace, shodnocení dosavadního progressu a společný plán integrace jednotlivých částí.
