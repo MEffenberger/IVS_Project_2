@@ -1,14 +1,14 @@
 # IVS_Project_2
-Calculator
+Kalkulačka
 
-Team project focused on teamwork, goal to build is a fully functional, basic calculator.
+Týmový projekt zaměřený na tvorbu programu funkce kalkulačky.
 
-Prostredi
+Prostředí
 ---------
 
 Ubuntu 64bit
 
-Autori
+Autoři
 ------
 
 Rogalo 🪁
