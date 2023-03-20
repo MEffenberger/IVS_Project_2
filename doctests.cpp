@@ -26,7 +26,7 @@ TEST_CASE("Odcitani") {
     CHECK(sub(2, 1) == 1);
     CHECK(sub(2, 1) == 1);
     CHECK(sub(2, 1) == 1);
-    CHECK(sub(2, 1) == 1);
+    CHECK(sub(3, 1) == 2);
     CHECK(sub(2, 1) == 1);
     CHECK(sub(2, 1) == 1);
     CHECK(sub(2, 1) == 1);
