@@ -1,23 +1,10 @@
 # IVS_Project_2
 Kalkulačka
-
-
-<b>
-<table>
-    <tr>
-        <td>
-            master branch
-        </td>
-        <td>
-            <a href="https://github.com/MEffenberger/IVS_Project_2/actions/?query=branch%3Amaster"><img src="https://github.com/MEffenberger/IVS_Project_2/actions/workflows/c-cpp.yml/badge.svg"></a>
-        </td>
-    </tr>
-</table>
-</b>
-
-
-
 Týmový projekt zaměřený na tvorbu programu funkce kalkulačky.
+
+[![CI](https://github.com/MEffenberger/IVS_Project_2/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/MEffenberger/IVS_Project_2/actions)
+[![Standard](https://img.shields.io/badge/c%2B%2B-11/14/17/20-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B#Standardization)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Prostředí
 ---------
