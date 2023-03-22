@@ -1,7 +1,21 @@
 # IVS_Project_2
 Kalkulačka
 
-| master branch | ![CIbadge](https://github.com/MEffenberger/IVS_Project_2/actions/workflows/c-cpp.yml/badge.svg) |
+
+<b>
+<table>
+    <tr>
+        <td>
+            master branch
+        </td>
+        <td>
+            <a href="https://github.com/MEffenberger/IVS_Project_2/actions/?query=branch%3Amaster"><img src="https://github.com/MEffenberger/IVS_Project_2/actions/workflows/c-cpp.yml/badge.svg"></a>
+        </td>
+    </tr>
+</table>
+</b>
+
+
 
 Týmový projekt zaměřený na tvorbu programu funkce kalkulačky.
 
