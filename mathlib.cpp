@@ -22,7 +22,7 @@ double libb_add (double num1, double num2) {
  * @param num2 second operand
  * @return difference of num1 and num2
  */
-int libb_sub (double num1, double num2) {
+double libb_sub (double num1, double num2) {
 
     if (num1 - num2 > MAX_SUPPORTED_NUM || num1 - num2 < MIN_SUPPORTED_NUM) {
         return std::cout << ERROR << std::endl;
