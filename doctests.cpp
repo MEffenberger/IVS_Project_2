@@ -72,10 +72,10 @@ TEST_CASE("Deleni") {
     CHECK(lib_div(0, 5) == 0);
     CHECK(lib_div(0, -5) == 0);
 
-    CHECK(lib_mul(1.8, 1.2) == doctest::Approx(1.5));
-    CHECK(lib_mul(-1.8, 1.2) == doctest::Approx(-1.5));
-    CHECK(lib_mul(1.8, -1.2) == doctest::Approx(-1.5));
-    CHECK(lib_mul(-1.8, -1.2) == doctest::Approx(1.5));
+    CHECK(lib_div(1.8, 1.2) == doctest::Approx(1.5));
+    CHECK(lib_div(-1.8, 1.2) == doctest::Approx(-1.5));
+    CHECK(lib_div(1.8, -1.2) == doctest::Approx(-1.5));
+    CHECK(lib_div(-1.8, -1.2) == doctest::Approx(1.5));
 
     CHECK_THROWS(lib_div(5, 0));
     CHECK_THROWS(lib_div(-5, 0));
