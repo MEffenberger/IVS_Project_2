@@ -1,32 +1,37 @@
-TARGET = calc
-TEST_TARGET = doctests
-
+TARGETS = doctests calc profiling gui
 SRC = $(wildcard *.cpp)
 OBJ = $(patsubst %.cpp,%.o,$(SRC))
 
 CXX = g++
-CXXFLAGS = -std=c++11 -O2 -Wall -Wextra -pedantic -g
+CXXFLAGS = -std=c++11 -O2 -Wall -Wextra -pedantic -g -lm
 
 .PHONY: all clean pack test doc run profile
 
 .DEFAULT_GOAL := all
 
-all: $(TARGET) $(TEST_TARGET)
+all: $(TARGETS)
 
-$(TARGET): $(OBJ) mathlib.h
+$(OBJ): $(SRC)
+	$(CXX) $(CXXFLAGS) -c $^
 
-$(TEST_TARGET): doctests.cpp mathlib.h mathlib.cpp
-	$(CXX) $(CXXFLAGS) doctests.o mathlib.o -o $(TEST_TARGET)
+calc: 
+#gui + parser + mathlib
+
+gui: 
+#GUI
+
+doctests: doctests.o mathlib.o
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean:
-	rm -f *.o $(TARGET) $(TEST_TARGET)
+	rm -f *.o $(TARGETS)
 
 pack:
 
 test:
 	@echo "==============================================================================="
 	@echo "RUNNING DOCTESTS"
-	./$(TEST_TARGET)
+	./doctests
 	@echo "==============================================================================="
 
 doc:
