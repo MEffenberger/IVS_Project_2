@@ -65,10 +65,16 @@ TEST_CASE("Nasobeni") {
 TEST_CASE("Deleni") {
 
     CHECK(lib_div(1, 1) == 1);
+
     CHECK(lib_div(6, 3) == 2);
     CHECK(lib_div(-6, 3) == -2);
     CHECK(lib_div(6, -3) == -2);
     CHECK(lib_div(-6, -3) == 2);
+    CHECK(lib_div(3, 6) == doctest::Approx(0.5).epsilon(0.0001));
+    CHECK(lib_div(-3, 6) == doctest::Approx(-0.5).epsilon(0.0001));
+    CHECK(lib_div(3, -6) == doctest::Approx(-0.5).epsilon(0.0001));
+    CHECK(lib_div(-3, -6) == doctest::Approx(0.5).epsilon(0.0001));
+
     CHECK(lib_div(0, 5) == 0);
     CHECK(lib_div(0, -5) == 0);
 
@@ -98,7 +104,7 @@ TEST_CASE("Faktorial") {
 }
 
 
-TEST_CASE("Mocnina s prirozenym exponentem") {
+TEST_CASE("Mocnina s celociselnym exponentem") {
     
     CHECK(lib_pow(2, 2) == 4);
     CHECK(lib_pow(2, 3) == 8);
@@ -109,12 +115,17 @@ TEST_CASE("Mocnina s prirozenym exponentem") {
     CHECK(lib_pow(-1, 3) == -1);
     CHECK(lib_pow(-1, 4) == 1);
     CHECK(lib_pow(2, 0) == 1);
+    CHECK(lib_pow(5, 0) == 1);
     CHECK(lib_pow(1.5, 2) == doctest::Approx(2.25).epsilon(0.0001));
     CHECK(lib_pow(-1.5, 2) == doctest::Approx(2.25).epsilon(0.0001));
     CHECK(lib_pow(1.5, 3) == doctest::Approx(3.375).epsilon(0.0001));
     CHECK(lib_pow(-1.5, 3) == doctest::Approx(-3.375).epsilon(0.0001));
 
-    CHECK_THROWS(lib_pow(2, -1));
+    CHECK(lib_pow(2, -1) == doctest::Approx(0.5).epsilon(0.0001));
+    CHECK(lib_pow(2, -2) == doctest::Approx(0.25).epsilon(0.0001));
+    CHECK(lib_pow(2, -3) == doctest::Approx(0.125).epsilon(0.0001));
+
+    CHECK_THROWS(lib_pow(0, 0));
     CHECK_THROWS(lib_pow(2, 1.1));
 }
 
@@ -143,11 +154,30 @@ TEST_CASE("Obecna odmocnina") {
 }
 
 
-TEST_CASE("Absolutni hodnota") {
+TEST_CASE("Modulo") {
 
-    CHECK(lib_abs(2) == 2);
-    CHECK(lib_abs(-2) == 2);
-    CHECK(lib_abs(0) == 0);
-    CHECK(lib_abs(1.1) == doctest::Approx(1.1).epsilon(0.0001));
-    CHECK(lib_abs(-1.1) == doctest::Approx(1.1).epsilon(0.0001));
+    CHECK(lib_mod(1, 1) == 0);
+    CHECK(lib_mod(1, 2) == 1);
+    CHECK(lib_mod(2, 1) == 0);
+
+    CHECK(lib_mod(6, 3) == 0);
+    CHECK(lib_mod(3, 6) == 3);
+    CHECK(lib_mod(5, 2) == 1);
+    CHECK(lib_mod(2, 5) == 2);
+
+    CHECK(lib_mod(6, 4) == 2);
+    CHECK(lib_mod(-6, 4) == 2);
+    CHECK(lib_mod(6, -4) == -2);
+    CHECK(lib_mod(-6, -4) == -2);
+    CHECK(lib_mod(0, 5) == 0);
+    CHECK(lib_mod(0, -5) == 0);
+
+    CHECK(lib_mod(1.8, 1.2) == doctest::Approx(0.6).epsilon(0.0001));
+    CHECK(lib_mod(-1.8, 1.2) == doctest::Approx(0.6).epsilon(0.0001));
+    CHECK(lib_mod(1.8, -1.2) == doctest::Approx(-0.6).epsilon(0.0001));
+    CHECK(lib_mod(-1.8, -1.2) == doctest::Approx(-0.6).epsilon(0.0001));
+
+    REQUIRE_THROWS(lib_mod(5, 0));
+    REQUIRE_THROWS(lib_mod(-5, 0));
+    REQUIRE_THROWS(lib_mod(0, 0));
 }
