@@ -1,6 +1,4 @@
 #include "mathlib.h"
-#include <stdlib.h>
-#include <iostream>
 
 /**
  * @brief function to add two numbers
@@ -16,6 +14,7 @@ double lib_add (double num1, double num2) {
     return num1 + num2;
 }
 
+
 /**
  * @brief function to subtract two numbers
  * @param num1 first operand
@@ -30,6 +29,7 @@ double lib_sub (double num1, double num2) {
     return num1 - num2;
 }
 
+
 /**
  * @brief function to multiply two numbers
  * @param num1 first operand
@@ -43,6 +43,7 @@ double lib_mul (double num1, double num2) {
     }
     return num1 * num2;
 }
+
 
 /**
  * @brief function to divide two numbers
@@ -61,6 +62,7 @@ double lib_div (double num1, double num2) {
     return num1 / num2;
 }
 
+
 /**
  * @brief function to calculate the absolute value of a number
  * @param num number to calculate the absolute value of
@@ -78,6 +80,7 @@ double lib_abs (double num) {
     return num;
 }
 
+
 /**
  * @brief function to calculate the power of a number
  * @param num number to calculate the power of
@@ -90,11 +93,12 @@ double lib_pow (double num, double exp) {
       throw std::runtime_error(ERROR);
     }
     if (pow(num, exp) > MAX_SUPPORTED_NUM ||  pow(num, exp) < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
+      throw std::runtime_error(ERROR);
     };
 
     return pow(num, exp);
 }
+
 
 /**
  * @brief function to calculate the root of a number
@@ -104,15 +108,20 @@ double lib_pow (double num, double exp) {
  */
 double lib_root (double num, double root) {
 
-    if (root == 0 || num < 0)) {
+    if (root == 0) {
         throw std::runtime_error(ERROR_OTHER);
     }
 
-    if (pow(num, 1/root) > MAX_SUPPORTED_NUM || pow(num, 1/root) < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR)
+    if (num < 0 && (int)root % 2 == 0) {
+        throw std::runtime_error(ERROR_OTHER);
+    }
+
+    if (pow(num, 1.0/root) > MAX_SUPPORTED_NUM || pow(num, 1.0/root) < MIN_SUPPORTED_NUM) {
+        throw std::runtime_error(ERROR);
     }
     return pow(num, 1/root);
 }
+
 
 /**
  * @brief function to calculate the factorial of a number
@@ -130,5 +139,22 @@ double lib_fact (double num) {
         return 1;
     }
     return num * lib_fact(num - 1);
+}
 
+
+/**
+ * @brief function to calculate the modulo of two numbers
+ * @param num1 first operand
+ * @param num2 second operand
+ * @return modulo of num1 and num2
+ */
+double lib_mod (double num1, double num2) {
+
+    if (num1 / num2 > MAX_SUPPORTED_NUM || num1 / num2 < MIN_SUPPORTED_NUM) {
+        throw std::runtime_error(ERROR);
+    }
+    if (num2 == 0) {
+        throw std::runtime_error(ERROR_DIV);
+    }
+    return fmod(num1, num2);
 }
