@@ -104,7 +104,7 @@ TEST_CASE("Faktorial") {
 }
 
 
-TEST_CASE("Mocnina s prirozenym exponentem") {
+TEST_CASE("Mocnina s celociselnym exponentem") {
     
     CHECK(lib_pow(2, 2) == 4);
     CHECK(lib_pow(2, 3) == 8);
@@ -115,12 +115,17 @@ TEST_CASE("Mocnina s prirozenym exponentem") {
     CHECK(lib_pow(-1, 3) == -1);
     CHECK(lib_pow(-1, 4) == 1);
     CHECK(lib_pow(2, 0) == 1);
+    CHECK(lib_pow(5, 0) == 1);
     CHECK(lib_pow(1.5, 2) == doctest::Approx(2.25).epsilon(0.0001));
     CHECK(lib_pow(-1.5, 2) == doctest::Approx(2.25).epsilon(0.0001));
     CHECK(lib_pow(1.5, 3) == doctest::Approx(3.375).epsilon(0.0001));
     CHECK(lib_pow(-1.5, 3) == doctest::Approx(-3.375).epsilon(0.0001));
 
-    CHECK_THROWS(lib_pow(2, -1));
+    CHECK(lib_pow(2, -1) == doctest::Approx(0.5).epsilon(0.0001));
+    CHECK(lib_pow(2, -2) == doctest::Approx(0.25).epsilon(0.0001));
+    CHECK(lib_pow(2, -3) == doctest::Approx(0.125).epsilon(0.0001));
+
+    CHECK_THROWS(lib_pow(0, 0));
     CHECK_THROWS(lib_pow(2, 1.1));
 }
 
