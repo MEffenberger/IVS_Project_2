@@ -113,7 +113,7 @@ double lib_root (double num, double root) {
         throw std::runtime_error(ERROR_OTHER);
     }
 
-    if (num < 0 && fmod(num, 2.0) == 0) {
+    if (num < 0 && (int)root % 2 == 0) {
         throw std::runtime_error(ERROR_OTHER);
     }
 
