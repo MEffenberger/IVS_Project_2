@@ -2,6 +2,7 @@
 #define MATHLIB_H
 #include <stdlib.h>
 #include <stdexcept>
+#include <math.h>
 
 /// Needed consultation about the maximal supported number, depending on the actual GUI, subject to change
 #define MAX_SUPPORTED_NUM 10000000
