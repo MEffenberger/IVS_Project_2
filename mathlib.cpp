@@ -1,5 +1,4 @@
 #include "mathlib.h"
-#include <math.h>
 
 /**
  * @brief function to add two numbers
