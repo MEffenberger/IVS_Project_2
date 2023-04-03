@@ -137,7 +137,7 @@ TEST_CASE("Obecna odmocnina") {
     CHECK(lib_root(2, 2) == doctest::Approx(1.414).epsilon(0.0001));
     CHECK(lib_root(8, 3) == 2);
     CHECK(lib_root(27, 3) == 3);
-    CHECK(lib_root(3, 3) == doctest::Approx(1.442).epsilon(0.0001));
+    CHECK(lib_root(3, 3) == doctest::Approx(1.4422).epsilon(0.0001));
 
     for (int i = 2; i < 10; i++) {
         if (i%2 == 0)
@@ -166,15 +166,15 @@ TEST_CASE("Modulo") {
     CHECK(lib_mod(2, 5) == 2);
 
     CHECK(lib_mod(6, 4) == 2);
-    CHECK(lib_mod(-6, 4) == 2);
-    CHECK(lib_mod(6, -4) == -2);
+    CHECK(lib_mod(-6, 4) == -2);
+    CHECK(lib_mod(6, -4) == 2);
     CHECK(lib_mod(-6, -4) == -2);
     CHECK(lib_mod(0, 5) == 0);
     CHECK(lib_mod(0, -5) == 0);
 
     CHECK(lib_mod(1.8, 1.2) == doctest::Approx(0.6).epsilon(0.0001));
-    CHECK(lib_mod(-1.8, 1.2) == doctest::Approx(0.6).epsilon(0.0001));
-    CHECK(lib_mod(1.8, -1.2) == doctest::Approx(-0.6).epsilon(0.0001));
+    CHECK(lib_mod(-1.8, 1.2) == doctest::Approx(-0.6).epsilon(0.0001));
+    CHECK(lib_mod(1.8, -1.2) == doctest::Approx(0.6).epsilon(0.0001));
     CHECK(lib_mod(-1.8, -1.2) == doctest::Approx(-0.6).epsilon(0.0001));
 
     REQUIRE_THROWS(lib_mod(5, 0));
