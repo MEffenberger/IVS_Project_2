@@ -1,4 +1,4 @@
-TARGETS = doctests calc profiling gui
+TARGETS = doctests calc profile
 SRC = $(wildcard *.cpp)
 OBJ = $(patsubst %.cpp,%.o,$(SRC))
 
@@ -14,19 +14,24 @@ all: $(TARGETS)
 $(OBJ): $(SRC)
 	$(CXX) $(CXXFLAGS) -c $^
 
-calc: 
-#gui + parser + mathlib
+calc:  
+#mkdir build
+#cd build
+#cmake ..
+#cmake --build .
 
-gui: 
-#GUI
+
+main: main.o parser.o mathlib.o
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 doctests: doctests.o mathlib.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean:
-	rm -f *.o $(TARGETS)
+	rm -f *.o $(TARGETS) stddev
 
 pack:
+#zip -r xeffen00_xvalik05_xhorut01_xhejni00.zip ../.
 
 test:
 	@echo "==============================================================================="
@@ -38,4 +43,5 @@ doc:
 
 run:
 
-profile:
+profile: stddev.o
+	$(CXX) $(CXXFLAGS) $^ -o stddev
