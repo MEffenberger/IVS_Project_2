@@ -1,9 +1,0 @@
-/home/dominik/build-calculatorGUI-Desktop-Release/CMakeFiles/calculatorGUI.dir
-/home/dominik/build-calculatorGUI-Desktop-Release/CMakeFiles/edit_cache.dir
-/home/dominik/build-calculatorGUI-Desktop-Release/CMakeFiles/rebuild_cache.dir
-/home/dominik/build-calculatorGUI-Desktop-Release/CMakeFiles/list_install_components.dir
-/home/dominik/build-calculatorGUI-Desktop-Release/CMakeFiles/install.dir
-/home/dominik/build-calculatorGUI-Desktop-Release/CMakeFiles/install/local.dir
-/home/dominik/build-calculatorGUI-Desktop-Release/CMakeFiles/install/strip.dir
-/home/dominik/build-calculatorGUI-Desktop-Release/CMakeFiles/calculatorGUI_autogen_timestamp_deps.dir
-/home/dominik/build-calculatorGUI-Desktop-Release/CMakeFiles/calculatorGUI_autogen.dir
