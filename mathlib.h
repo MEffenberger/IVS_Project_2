@@ -1,6 +1,8 @@
 #ifndef MATHLIB_H
 #define MATHLIB_H
-
+#include <stdlib.h>
+#include <stdexcept>
+#include <math.h>
 
 /// Needed consultation about the maximal supported number, depending on the actual GUI, subject to change
 #define MAX_SUPPORTED_NUM 10000000
@@ -20,8 +22,7 @@ double lib_fact (double num);
 double lib_pow (double num, double exp);
 double lib_root (double num, double root);
 
-double lib_abs (double num);
-
+double lib_mod (double num1, double num2);
 
 
 
