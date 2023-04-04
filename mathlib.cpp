@@ -1,5 +1,11 @@
-#define USE_NUMBER_LIMITATIONS
 #include "mathlib.h"
+
+#define MAX_SUPPORTED_NUM 10000000
+#define MIN_SUPPORTED_NUM -10000000
+#define ERROR "Error: Number out of range."
+#define ERROR_DIV "Error: Division by zero."
+#define ERROR_OTHER "Error: Unsupported input."
+
 
 /**
  * @brief function to add two numbers
