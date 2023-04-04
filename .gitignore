@@ -10,3 +10,4 @@ doctests.o
 mathlib.o
 stddev_copy.o
 stddev.o
+doctests
