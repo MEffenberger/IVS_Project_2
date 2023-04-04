@@ -1,7 +1,8 @@
 #!/bin/bash
 
 
-files=("mathlib.cpp" "stddev.cpp" "parser.cpp")
+files=("mathlib.cpp" "stddev.cpp" "arguments_parser.cpp")
+#files=$(find . -name "*.hpp" -o -name "*.cpp")
 flags=
 
 for f in "${files[@]}"; do

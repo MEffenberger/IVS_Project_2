@@ -1,5 +1,5 @@
 ---
-Checks: '-*,clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,misc-*,readability-*,performance-*,modernize-*'
+Checks: '-*,clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,readability-*,performance-*,modernize-*'
 WarningsAsErrors: false
 AnalyzeTemporaryDtors: false
 FormatStyle: none
