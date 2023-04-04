@@ -1,7 +1,6 @@
 #include "mathlib.cpp"
 #include <iostream>
 #include <vector>
-#include <cmath>
 
 using namespace std;
 
@@ -22,7 +21,7 @@ int main() {
     }
 
     double mean = lib_div(sum, count);
-    var = lib_sub(lib_div(sum_sq, count), pow(mean, 2));
+    var = lib_sub(lib_div(sum_sq, count), lib_pow(mean, 2));
     SDeviation = lib_root(var, 2);
     cout << SDeviation << endl;
 
