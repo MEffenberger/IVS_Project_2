@@ -37,7 +37,7 @@ test:
 
 doc:
 	if ! dpkg-query -W doxygen; then sudo apt-get update && sudo apt-get install -y doxygen; fi
-    doxygen Doxyfile
+	doxygen Doxyfile
 
 run:
 	@echo "==============================================================================="
