@@ -43,5 +43,5 @@ doc:
 
 run:
 
-profile: stddev.o
+profile: stddev.o mathlib.o
 	$(CXX) $(CXXFLAGS) $^ -o stddev
