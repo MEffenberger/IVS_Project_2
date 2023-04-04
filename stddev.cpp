@@ -1,4 +1,4 @@
-#include "mathlib.cpp"
+#include "mathlib.h"
 #include <iostream>
 #include <vector>
 
