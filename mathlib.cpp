@@ -1,3 +1,4 @@
+#define USE_NUMBER_LIMITATIONS
 #include "mathlib.h"
 
 /**
