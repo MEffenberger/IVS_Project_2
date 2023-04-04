@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    vector<double>numbers;
+    vector<double>input_nums;
     double number;
     double sum = 0;
     double SDeviation;
@@ -17,23 +17,20 @@ int main() {
 
     while(fscanf(stdin, "%lf", &number) == 1){
         sum = lib_add(sum, number);
-        numbers.push_back(number);
+        input_nums.push_back(number);
     }
 
-    double mean = lib_div(sum, numbers.size());
-    cout <<"Sum: " << sum << endl;
-    cout <<"Count: " << numbers.size() << endl;
-    cout <<"Mean:" << mean << endl;
+    double mean = lib_div(sum, input_nums.size());
 
-    for (int i = 0; i < numbers.size(); i++){
-        step1 = lib_sub(numbers[i], mean);
+    for (int i = 0; i < input_nums.size(); i++){
+        step1 = lib_sub(input_nums[i], mean);
         step2 = lib_pow(step1, 2);
         var += step2; //Can not use library function for now, since var exceeds max. supported number
     }
 
-    var = lib_div(var, numbers.size());
+    var = lib_div(var, input_nums.size());
     SDeviation = lib_root(var, 2);
-    cout <<"Standard deviation:" << SDeviation << endl;
+    cout << SDeviation << endl;
 
     return 0;
 }
