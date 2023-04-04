@@ -3,4 +3,4 @@ Checks: '-*,clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,misc-*,reada
 WarningsAsErrors: false
 AnalyzeTemporaryDtors: false
 FormatStyle: none
-DiagnosticFormat: clang
+
