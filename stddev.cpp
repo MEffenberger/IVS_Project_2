@@ -21,7 +21,9 @@ int main() {
     }
 
     double mean = lib_div(sum, count);
-    var = lib_sub(lib_div(sum_sq, count), lib_pow(mean, 2));
+    //var = lib_sub(lib_div(sum_sq, count), lib_pow(mean, 2));
+    var = sum_sq - lib_pow(mean, 2)*count;
+    var = lib_div(var, count);
     SDeviation = lib_root(var, 2);
     cout << SDeviation << endl;
 
