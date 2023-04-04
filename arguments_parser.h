@@ -11,7 +11,7 @@
 #include <string>
 #include <map>
 
-double arg_parser(std::string input_string);
+std::string arg_parser(std::string input_string);
 
 
 #endif //IVS_PROJECT_2_ARGUMENTS_PARSER_H
