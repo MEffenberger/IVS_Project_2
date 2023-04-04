@@ -1,0 +1,17 @@
+name: clang-tidy
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  clang-tidy:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: dependencies
+      run: sudo apt install clang-tidy
+    - name: clang-tidy
+      run: chmod +x tidy.sh && ./tidy.sh
