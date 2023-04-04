@@ -1,5 +1,8 @@
 
 .vscode/settings.json
 stddev
+stddev_copy
+stddev_copy.cpp
 data.txt
+cisla.txt
 numbers.txt
