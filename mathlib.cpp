@@ -76,7 +76,7 @@ double lib_pow (double num, double exp) {
     if (pow(num, exp) > MAX_SUPPORTED_NUM ||  pow(num, exp) < MIN_SUPPORTED_NUM) {
       throw std::runtime_error(ERROR);
     };
-    if (num == 0 && exp == 0) {
+    if ((num == 0 && exp == 0) || int(exp) != exp) {
         throw std::runtime_error(ERROR_OTHER);
     }
 
