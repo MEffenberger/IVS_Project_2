@@ -113,10 +113,13 @@ std::string arg_parser(std::string input_string) {
     }
 
     // výpočet výsledku
-    for (auto& token : output_stack) {
-        if (isdigit(token[0]) || token[0] == '.') {
+    for (auto& token : output_stack) 
+        {
+        if (isdigit(token[0]) || token[0] == '.') 
+        {
             result_stack.push_back(std::stod(token));
-        } else {
+        } else 
+            {
             if (token[0] == '_') {                  // nutný převod unárního mínus na nový symbol
                 double op2 = result_stack.back();
                 result_stack.pop_back();
@@ -167,7 +170,8 @@ std::string arg_parser(std::string input_string) {
                 double op2 = result_stack.back();
                 result_stack.pop_back();
                 result_stack.push_back(lib_fact(op2));
-            } else {
+            } else 
+            {
                 throw std::runtime_error(ERROR_OTHER);
             }
         }
