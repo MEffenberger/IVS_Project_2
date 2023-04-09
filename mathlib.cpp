@@ -15,9 +15,11 @@
  */
 double lib_add (double num1, double num2) {
 
-    if (num1 + num2 > MAX_SUPPORTED_NUM || num1 + num2 < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
+    #ifndef PROFILING
+        if (num1 + num2 > MAX_SUPPORTED_NUM || num1 + num2 < MIN_SUPPORTED_NUM) {
+            throw std::runtime_error(ERROR);
+        }
+    #endif
     return num1 + num2;
 }
 
@@ -29,10 +31,11 @@ double lib_add (double num1, double num2) {
  * @return difference of num1 and num2
  */
 double lib_sub (double num1, double num2) {
-
-    if (num1 - num2 > MAX_SUPPORTED_NUM || num1 - num2 < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
+    #ifndef PROFILING
+        if (num1 - num2 > MAX_SUPPORTED_NUM || num1 - num2 < MIN_SUPPORTED_NUM) {
+            throw std::runtime_error(ERROR);
+        }
+    #endif
     return num1 - num2;
 }
 
@@ -44,10 +47,11 @@ double lib_sub (double num1, double num2) {
  * @return product of num1 and num2
  */
 double lib_mul (double num1, double num2) {
-
-    if (num1 * num2 > MAX_SUPPORTED_NUM || num1 * num2 < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
+    #ifndef PROFILING
+        if (num1 * num2 > MAX_SUPPORTED_NUM || num1 * num2 < MIN_SUPPORTED_NUM) {
+            throw std::runtime_error(ERROR);
+        }
+    #endif
     return num1 * num2;
 }
 
@@ -59,10 +63,12 @@ double lib_mul (double num1, double num2) {
  * @return quotient of num1 and num2
  */
 double lib_div (double num1, double num2) {
+    #ifndef PROFILING
+        if (num1 / num2 > MAX_SUPPORTED_NUM || num1 / num2 < MIN_SUPPORTED_NUM) {
+            throw std::runtime_error(ERROR);
+        }
+    #endif
 
-    if (num1 / num2 > MAX_SUPPORTED_NUM || num1 / num2 < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
     if (num2 == 0) {
         throw std::runtime_error(ERROR_DIV);
     }
@@ -77,16 +83,17 @@ double lib_div (double num1, double num2) {
  */
 double lib_pow (double num, double exp) {
 
-    if (pow(num, exp) > MAX_SUPPORTED_NUM || pow(num, exp) < MIN_SUPPORTED_NUM) {
-      throw std::runtime_error(ERROR);
-    }
-    if (pow(num, exp) > MAX_SUPPORTED_NUM ||  pow(num, exp) < MIN_SUPPORTED_NUM) {
-      throw std::runtime_error(ERROR);
-    };
-    if ((num == 0 && exp == 0) || int(exp) != exp) {
-        throw std::runtime_error(ERROR_OTHER);
-    }
-
+    #ifndef PROFILING
+        if (pow(num, exp) > MAX_SUPPORTED_NUM || pow(num, exp) < MIN_SUPPORTED_NUM) {
+        throw std::runtime_error(ERROR);
+        }
+        if (pow(num, exp) > MAX_SUPPORTED_NUM ||  pow(num, exp) < MIN_SUPPORTED_NUM) {
+        throw std::runtime_error(ERROR);
+        }
+        if ((num == 0 && exp == 0) || int(exp) != exp) {
+            throw std::runtime_error(ERROR_OTHER);
+        }
+    #endif
     return pow(num, exp);
 }
 
@@ -98,18 +105,19 @@ double lib_pow (double num, double exp) {
  * @return num^root
  */
 double lib_root (double num, double root) {
+    #ifndef PROFILING
+        if (root == 0) {
+            throw std::runtime_error(ERROR_OTHER);
+        }
 
-    if (root == 0) {
-        throw std::runtime_error(ERROR_OTHER);
-    }
+        if (num < 0 && (int)root % 2 == 0) {
+            throw std::runtime_error(ERROR_OTHER);
+        }
 
-    if (num < 0 && (int)root % 2 == 0) {
-        throw std::runtime_error(ERROR_OTHER);
-    }
-
-    if (pow(num, 1.0/root) > MAX_SUPPORTED_NUM || pow(num, 1.0/root) < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
+        if (pow(num, 1.0/root) > MAX_SUPPORTED_NUM || pow(num, 1.0/root) < MIN_SUPPORTED_NUM) {
+            throw std::runtime_error(ERROR);
+        }
+    #endif
     return pow(num, 1/root);
 }
 
