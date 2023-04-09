@@ -69,25 +69,6 @@ double lib_div (double num1, double num2) {
     return num1 / num2;
 }
 
-
-/**
- * @brief function to calculate the absolute value of a number
- * @param num number to calculate the absolute value of
- * @return absolute value of num
- */
-double lib_abs (double num) {
-
-    if (num > MAX_SUPPORTED_NUM || num < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
-
-    if (num < 0) {
-        return num * -1;
-    }
-    return num;
-}
-
-
 /**
  * @brief function to calculate the power of a number
  * @param num number to calculate the power of
@@ -102,6 +83,9 @@ double lib_pow (double num, double exp) {
     if (pow(num, exp) > MAX_SUPPORTED_NUM ||  pow(num, exp) < MIN_SUPPORTED_NUM) {
       throw std::runtime_error(ERROR);
     };
+    if ((num == 0 && exp == 0) || int(exp) != exp) {
+        throw std::runtime_error(ERROR_OTHER);
+    }
 
     return pow(num, exp);
 }

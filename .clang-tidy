@@ -1,0 +1,6 @@
+---
+Checks: '-*,clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,readability-*,performance-*,modernize-*'
+WarningsAsErrors: false
+AnalyzeTemporaryDtors: false
+FormatStyle: none
+
