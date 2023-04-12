@@ -1,10 +1,5 @@
 #include "mathlib.h"
 
-#define MAX_SUPPORTED_NUM 10000000
-#define MIN_SUPPORTED_NUM -10000000
-#define ERROR "Error: Number out of range."
-#define ERROR_DIV "Error: Division by zero."
-#define ERROR_OTHER "Error: Unsupported input."
 
 
 /**
@@ -15,9 +10,6 @@
  */
 double lib_add (double num1, double num2) {
 
-    if (num1 + num2 > MAX_SUPPORTED_NUM || num1 + num2 < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
     return num1 + num2;
 }
 
@@ -30,9 +22,6 @@ double lib_add (double num1, double num2) {
  */
 double lib_sub (double num1, double num2) {
 
-    if (num1 - num2 > MAX_SUPPORTED_NUM || num1 - num2 < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
     return num1 - num2;
 }
 
@@ -45,9 +34,6 @@ double lib_sub (double num1, double num2) {
  */
 double lib_mul (double num1, double num2) {
 
-    if (num1 * num2 > MAX_SUPPORTED_NUM || num1 * num2 < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
     return num1 * num2;
 }
 
@@ -60,9 +46,6 @@ double lib_mul (double num1, double num2) {
  */
 double lib_div (double num1, double num2) {
 
-    if (num1 / num2 > MAX_SUPPORTED_NUM || num1 / num2 < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
     if (num2 == 0) {
         throw std::runtime_error(ERROR_DIV);
     }
@@ -77,12 +60,6 @@ double lib_div (double num1, double num2) {
  */
 double lib_pow (double num, double exp) {
 
-    if (pow(num, exp) > MAX_SUPPORTED_NUM || pow(num, exp) < MIN_SUPPORTED_NUM) {
-      throw std::runtime_error(ERROR);
-    }
-    if (pow(num, exp) > MAX_SUPPORTED_NUM ||  pow(num, exp) < MIN_SUPPORTED_NUM) {
-      throw std::runtime_error(ERROR);
-    };
     if ((num == 0 && exp == 0) || int(exp) != exp) {
         throw std::runtime_error(ERROR_OTHER);
     }
@@ -107,9 +84,6 @@ double lib_root (double num, double root) {
         throw std::runtime_error(ERROR_OTHER);
     }
 
-    if (pow(num, 1.0/root) > MAX_SUPPORTED_NUM || pow(num, 1.0/root) < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
     return pow(num, 1/root);
 }
 
@@ -141,9 +115,6 @@ double lib_fact (double num) {
  */
 double lib_mod (double num1, double num2) {
 
-    if (num1 / num2 > MAX_SUPPORTED_NUM || num1 / num2 < MIN_SUPPORTED_NUM) {
-        throw std::runtime_error(ERROR);
-    }
     if (num2 == 0) {
         throw std::runtime_error(ERROR_DIV);
     }
