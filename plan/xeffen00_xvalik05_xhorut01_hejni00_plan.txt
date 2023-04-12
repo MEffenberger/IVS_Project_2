@@ -22,10 +22,12 @@ Rozdělení úkolů (*+ kontrola*):
     
     Plán, nastudování automatizace testů (CI/CD Github Actions)
     
+
 2. týden - do 26.3.
     
     Zhotovení testů matematické knihovny
     
+
 3. týden - do 2.4.
     
     GUI design kalkulačky
@@ -33,24 +35,26 @@ Rozdělení úkolů (*+ kontrola*):
     Knihovna s matematickými funkcemi, parser
 
     30. 4. schůze teamu Rogalo kvůli domluvě na práci s Gitem
-    
-    
+
+
 4. týden - do 9.4.
     
     Profiling, optimalizace, GUI development
 
-    12.4. schůze teamu Rogalo kvuli integraci casti
-    
+
 5. týden - do 16.4.
     
     Integrace a debugging
-    
+
+    12.4. schůze teamu Rogalo kvuli integraci casti
+
+
 6. týden - do 23.4.
     
     Finální meeting, mockup budoucích verzí
     
 
 25.4.  Product delivery
-
+ 
 
 V průběhu 4./5. týdne proběhne živý meeting pro aktualizace, shodnocení dosavadního progressu a společný plán integrace jednotlivých částí.

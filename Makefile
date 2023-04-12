@@ -46,4 +46,4 @@ run:
 	@echo "==============================================================================="
 
 profile: stddev.o mathlib.o
-	$(CXX) $(CXXFLAGS) $^ -o stddev
+	$(CXX) $(CXXFLAGS) -pg $^ -o stddev
