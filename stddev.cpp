@@ -15,8 +15,8 @@ int main() {
     while(fscanf(stdin, "%lf", &number) == 1){
         sum = lib_add(sum, number);
         //sum_sq += lib_pow(number, 2); Can not use library function for now, since sum_sq does exceed max. supported number
-        sum_sq = lib_add(sumsq, lib_pow(number, 2));
-        count ++;
+        sum_sq = lib_add(sum_sq, lib_pow(number, 2));
+        lib_add(count, 1);
     }
 
     double mean = lib_div(sum, count);
