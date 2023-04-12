@@ -11,3 +11,12 @@ mathlib.o
 stddev_copy.o
 stddev.o
 doctests
+arguments_parser.o
+GUI/calculatorGUI/CMakeCache.txt
+GUI/calculatorGUI/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake
+GUI/calculatorGUI/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_CXX.bin
+GUI/calculatorGUI/CMakeFiles/3.22.1/CMakeSystem.cmake
+GUI/calculatorGUI/CMakeFiles/3.22.1/CompilerIdCXX/a.out
+GUI/calculatorGUI/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+GUI/calculatorGUI/CMakeFiles/cmake.check_cache
+GUI/calculatorGUI/CMakeFiles/CMakeOutput.log
