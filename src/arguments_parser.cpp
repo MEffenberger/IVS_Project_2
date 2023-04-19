@@ -3,7 +3,10 @@
 #include <vector>
 #include <string>
 #include <map>
-
+#include <iomanip>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
 
 /**
  * @brief Zpracování vstupního řetězce s následným výpočtem na základě Shunting-yard algoritmu
@@ -12,6 +15,29 @@
  * @return výsledný řetězec
  */
 std::string arg_parser(std::string input_string) {
+
+    if(input_string.back() == '^' || input_string.back() == 'v' ||
+    input_string.back() == '*' || input_string.back() == '/' ||
+    input_string.back() == '%' || input_string.back() == '+' ||
+    input_string.back() == '-' || input_string.back() == '('){
+        throw std::runtime_error("Check last char!");          // error handling - poslední znak nesmí být operátor
+    }
+
+    int ent_par = 0;
+    int close_par = 0;
+
+    for (char ch : input_string)
+    {
+        if (ch == '(') {
+            ent_par++;
+        } else if (ch == ')') {
+            close_par++;
+        }
+    }
+
+    if (ent_par != close_par) {
+        throw std::runtime_error("Check the ')','('!");         // error handling - kontrola závorek, počet otevřených musí být stejný jako počet uzavřených
+    }
 
     // pomocné vektory pro zpracování vstupu
     std::vector<std::string> output_stack;
@@ -36,15 +62,20 @@ std::string arg_parser(std::string input_string) {
 
     // potřebný flag pro zpracování unárních operátorů
     bool last_was_operator = true;
+
     // potřebný flag pro zpracování faktoriálu pro zachování správné precedence při výrazu <num>!-<num>
     bool last_was_factorial = false;
 
     for (long unsigned int i = 0; i < input_string.length(); i++)
     {
+
         char c = input_string[i];
 
-        if((((!(isdigit(c)) && c != '+' && c != '-' ) || c == '*' || c == '/' || c == '%' || c == '^' || c == 'v' || c == '!') ) && output_stack.empty() && operator_stack.empty()){
-            throw std::runtime_error(ERROR_OTHER);          // error handling - 1. znak nesmí být operátor krom unarniho plus/minus
+        if((((!(isdigit(c)) && c != '+' && c != '-' && c != '(' && c != '.')
+        || c == '*' || c == '/' || c == '%' || c == '^' || c == 'v' || c == '!') )
+        && output_stack.empty() && operator_stack.empty())
+        {
+            throw std::runtime_error("Check first char!");          // error handling - 1. znak nesmí být operátor krom unarniho plus/minus
         }
 
         if (isdigit(c) || c == '.')
@@ -63,9 +94,14 @@ std::string arg_parser(std::string input_string) {
 
             i--;  // posunutí indexu o jeden znak zpět pro zpracování posledního čísla
 
+            int periodCount = std::count(number_str.begin(), number_str.end(), '.');
+            if (periodCount > 1) throw std::runtime_error(ERROR_OTHER);                  // ošetření krajních vstupů typu "2..2"
+
+
             output_stack.push_back(number_str);
             last_was_operator = false;
         }
+
         else if (c == '(')
         {
             operator_stack.push_back(c);
@@ -84,7 +120,7 @@ std::string arg_parser(std::string input_string) {
 
         else if (c == '+' || c == '-' || c == '*' || c == '/' || c == '%' || c == '^' || c == 'v' || c == '!')
         {
-            if (c == '+' && last_was_operator && !last_was_factorial) continue;  // ignorování případu, kdy je za sebou více operátorů (např. "2++2" + podpora pro faktorial
+            if (c == '+' && last_was_operator && !last_was_factorial) continue;           // ignorování případu, kdy je za sebou více operátorů (např. "2++2" + podpora pro faktorial
 
             // podmínka pro zpracování unárních operátorů
             if ((last_was_operator && !last_was_factorial && c == '-') || (c == '-' && (i == 0 || input_string[i-1] == '(')))
@@ -97,12 +133,12 @@ std::string arg_parser(std::string input_string) {
             // podmínky pro správné zpracování operátorů na základě precedence
             while (!operator_stack.empty() && precedence[operator_stack.back()] >= precedence[c])
             {
-                if(operator_stack.back() == '_') break;                                                     //////////////////////////////////////////////////////////////////
+                if(operator_stack.back() == '_') break;                                         // ošetření krajních vstupů typu "2---2"
                 output_stack.push_back(std::string(1, operator_stack.back()));
                 operator_stack.pop_back();
             }
 
-            if(last_was_operator && c != '_' && output_stack.back()[0] != '!') throw std::runtime_error(ERROR_OTHER);                       //////////////////////////////////////////////////////////////////
+            if(last_was_operator && c != '_' && output_stack.back()[0] != '!') throw std::runtime_error(ERROR_OTHER);        // ošetření krajních vstupů kombinačních s faktoriálem
             operator_stack.push_back(c);
             last_was_operator = true;
         }
@@ -115,16 +151,21 @@ std::string arg_parser(std::string input_string) {
     }
 
     // převod zpracovaného výrazu na reverse polish notation
+
     while (!operator_stack.empty()) {
         output_stack.push_back(std::string(1, operator_stack.back()));
         operator_stack.pop_back();
     }
 
-    // výpočet výsledku
+    ////////////////////////////////////////////////////
+    //** výpočet výsledku z reverse polish notation **//
+    ////////////////////////////////////////////////////
+
     for (auto& token : output_stack) 
         {
         if (isdigit(token[0]) || token[0] == '.') 
         {
+            std::replace(token.begin(), token.end(), '.', ',');     // převod desetinné čárky na desetinnou tečku, možné ošetření konverze kvůli lokalizaci
             result_stack.push_back(std::stod(token));
         } else 
             {
@@ -185,17 +226,37 @@ std::string arg_parser(std::string input_string) {
         }
     }
 
-    // zaokrouhlení výsledku, předmět změny
-    double exponent = std::floor(std::log10(std::abs(result_stack.back()))) + 1;
-    double precision = 10;
-    double rounded = std::round(result_stack.back() / std::pow(10, exponent - precision)) * std::pow(10, exponent - precision);
-    std::string result = std::to_string(rounded);
+    ////////////////////////////////////////////////////////////////////////////////////////
+    /// ** změna zpracování výsledku pomocí knihovny, lepší zobrazování krajních hodnot **//
+    ////////////////////////////////////////////////////////////////////////////////////////
 
-        if (exponent > precision) {
-            result += "e+" + std::to_string(static_cast<int>(exponent) - precision);
-        } else if (exponent < 0) {
-            result += "e-" + std::to_string(static_cast<int>(std::abs(exponent)));
-        }
+    double result = result_stack.back();
 
-    return result;
+    std::stringstream stream;
+    std::string formattedString;
+
+        if (std::abs(result) > 9999999999999.0 || (std::abs(result) > 0.0 && std::abs(result) < 0.0001)) {
+        stream << std::scientific << std::setprecision(5) << result;
+    } else {
+        stream << std::fixed << std::setprecision(10) << result;
+    }
+
+    formattedString = stream.str();
+
+    if (formattedString.length() > 15) {
+        formattedString = formattedString.substr(0, 15);
+    }
+
+    while (formattedString.back() == '0') {                    // odstranění nul na konci
+        formattedString.pop_back();
+    }
+
+    if (formattedString.back() == '.') {                      // odstranění tečky na konci
+        formattedString.pop_back();
+    }
+
+    return formattedString;
 }
+
+
+

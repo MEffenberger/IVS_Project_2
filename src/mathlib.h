@@ -9,9 +9,9 @@
 
 #define MAX_SUPPORTED_NUM DBL_MAX
 #define MIN_SUPPORTED_NUM DBL_MIN
-#define ERROR "Error: Number out of range."
-#define ERROR_DIV "Error: Division by zero."
-#define ERROR_OTHER "Error: Unsupported input."
+#define ERROR "Out of range."
+#define ERROR_DIV "Division by zero."
+#define ERROR_OTHER "Wrong input."
 
 
 double lib_add (double num1, double num2);
