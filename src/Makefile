@@ -1,11 +1,12 @@
 TARGETS = doctests calc profile
 SRC = $(wildcard *.cpp)
 OBJ = $(patsubst %.cpp,%.o,$(SRC))
+DESTDIR = 
 
 CXX = g++
 CXXFLAGS = -std=c++11 -O2 -Wall -Wextra -pedantic -g
 
-.PHONY: all clean pack test doc run profile
+.PHONY: all clean pack test doc run profile install
 
 .DEFAULT_GOAL := all
 
@@ -14,11 +15,8 @@ all: $(TARGETS)
 $(OBJ): $(SRC)
 	$(CXX) $(CXXFLAGS) -c $^
 
-calc:  
-#mkdir build
-#cd build			TODO
-#qmake ..               
-#qmake --build .
+calc: mathlib.o arguments_parser.o mainwindow.o main.o 
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 doctests: doctests.o mathlib.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
@@ -48,3 +46,8 @@ run:
 
 profile: stddev.o mathlib.o
 	$(CXX) $(CXXFLAGS) -pg $^ -o stddev
+
+install: calc
+	mkdir -p $(DESTDIR)/usr/bin
+	install -m 755 -o root calc $(DESTDIR)/usr/bin
+
