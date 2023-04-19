@@ -43,6 +43,10 @@ std::string arg_parser(std::string input_string) {
     {
         char c = input_string[i];
 
+        if((((!(isdigit(c)) && c != '+' && c != '-' ) || c == '*' || c == '/' || c == '%' || c == '^' || c == 'v' || c == '!') ) && output_stack.empty() && operator_stack.empty()){
+            throw std::runtime_error(ERROR_OTHER);          // error handling - 1. znak nesmí být operátor krom unarniho plus/minus
+        }
+
         if (isdigit(c) || c == '.')
         {
             if (last_was_operator && c == '.')    // možnost zadání desetinné čárky jako prvního znaku (např. ".2")
@@ -80,6 +84,8 @@ std::string arg_parser(std::string input_string) {
 
         else if (c == '+' || c == '-' || c == '*' || c == '/' || c == '%' || c == '^' || c == 'v' || c == '!')
         {
+            if (c == '+' && last_was_operator && !last_was_factorial) continue;  // ignorování případu, kdy je za sebou více operátorů (např. "2++2" + podpora pro faktorial
+
             // podmínka pro zpracování unárních operátorů
             if ((last_was_operator && !last_was_factorial && c == '-') || (c == '-' && (i == 0 || input_string[i-1] == '(')))
             {
@@ -91,10 +97,12 @@ std::string arg_parser(std::string input_string) {
             // podmínky pro správné zpracování operátorů na základě precedence
             while (!operator_stack.empty() && precedence[operator_stack.back()] >= precedence[c])
             {
+                if(operator_stack.back() == '_') break;                                                     //////////////////////////////////////////////////////////////////
                 output_stack.push_back(std::string(1, operator_stack.back()));
                 operator_stack.pop_back();
             }
 
+            if(last_was_operator && c != '_' && output_stack.back()[0] != '!') throw std::runtime_error(ERROR_OTHER);                       //////////////////////////////////////////////////////////////////
             operator_stack.push_back(c);
             last_was_operator = true;
         }
