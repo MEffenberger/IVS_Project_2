@@ -1,12 +1,11 @@
 TARGETS = doctests calc profile
 SRC = arguments_parser.cpp doctests.cpp mathlib.cpp stddev.cpp
 OBJ = $(patsubst %.cpp,%.o,$(SRC))
-DESTDIR = 
 
 CXX = g++
 CXXFLAGS = -std=c++11 -O2 -Wall -Wextra -pedantic -g
 
-.PHONY: all clean pack test doc run profile install
+.PHONY: all clean pack test doc run profile
 
 .DEFAULT_GOAL := all
 
@@ -47,8 +46,3 @@ run:
 
 profile: stddev.o mathlib.o
 	$(CXX) $(CXXFLAGS) -pg $^ -o stddev
-
-install: calc
-	mkdir -p $(DESTDIR)/usr/bin
-	install -m 755 -o root calc $(DESTDIR)/usr/bin
-
