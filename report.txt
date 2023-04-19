@@ -1,0 +1,58 @@
+Vsechna cisla jsou v rosahu od 1 do 1 000 000.
+Each sample counts as 0.01 seconds.
+
+1. Vstup 10 cisel:
+Vystup: no time accumulated
+
+2. Vstup 1000 cisel:
+Vystup: no time accumulated
+
+
+3. Vstup 1 000 000 cisel:
+Vystup:
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+100.00      0.02     0.02                             main
+
+4. Vstup 10 000 000 cisel:
+Vystup:
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 60.00      0.03     0.03                             lib_add(double, double)
+ 20.00      0.04     0.01                             lib_pow(double, double)
+ 20.00      0.05     0.01                             _init
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
