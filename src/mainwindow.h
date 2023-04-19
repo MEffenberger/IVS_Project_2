@@ -36,6 +36,6 @@ private slots:
     void on_button_clear_released();
 
     void on_button_root_released();
-    void on_button_help_clicked();
+    
 };
 #endif // MAINWINDOW_H
