@@ -16,6 +16,7 @@ $(OBJ): $(SRC)
 	$(CXX) $(CXXFLAGS) -c $^
 
 calc:
+	if ! dpkg-query -W qtbase5-dev; then sudo apt-get update && sudo apt-get install -y qtbase5-dev; fi
 	qmake && make -f QMakefile
 
 doctests: doctests.o mathlib.o
