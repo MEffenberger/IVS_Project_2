@@ -1,0 +1,4 @@
+xeffen00 100 (matematická knihovna, parser)
+xvalik05 100 (testy)
+xhorut01 100 (uživatelské rozhraní)
+xhejni00 100 (profiling, uživatelská dokumentace)
