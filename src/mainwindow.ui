@@ -71,7 +71,7 @@ background-color: rgb(206,206,206);
 }
 
 #button_del{
-background-image: url(/home/dominik/Calculator/pic/backspace.png);
+background-image: ./pic/backspace.png;
 background-repeat: no-repeat;
 background-position: center;
 border-radius: 10px;

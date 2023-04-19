@@ -1,5 +1,5 @@
 TARGETS = doctests calc profile
-SRC = $(wildcard *.cpp)
+SRC = arguments_parser.cpp doctests.cpp mathlib.cpp stddev.cpp
 OBJ = $(patsubst %.cpp,%.o,$(SRC))
 DESTDIR = 
 
@@ -15,14 +15,14 @@ all: $(TARGETS)
 $(OBJ): $(SRC)
 	$(CXX) $(CXXFLAGS) -c $^
 
-calc: mathlib.o arguments_parser.o mainwindow.o main.o 
-	$(CXX) $(CXXFLAGS) $^ -o $@
+calc:
+	qmake && make -f QMakefile
 
 doctests: doctests.o mathlib.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 clean:
-	rm -f *.o $(TARGETS) stddev
+	rm -f *.o $(TARGETS) stddev && make clean -f QMakefile && rm -f .qmake.stash QMakefile
 
 pack:
 #zip file will pack all the files and directories from the parent directory recursively and will be created in the parent directory
