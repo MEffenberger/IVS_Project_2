@@ -80,11 +80,14 @@ double lib_root (double num, double root) {
         throw std::runtime_error(ERROR_OTHER);
     }
 
-    if (num < 0 && (int)root % 2 == 0) {
+    if (num < 0 && std::fmod(root, 2) == 0) {
         throw std::runtime_error(ERROR_OTHER);
     }
 
-    return pow(num, 1/root);
+    if(num < 0 && std::fmod(root, 2) != 0) {
+        return -std::pow(-num, 1.0/root);
+    }
+    return std::pow(num, 1.0/root);
 }
 
 
