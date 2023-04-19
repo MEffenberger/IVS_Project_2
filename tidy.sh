@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-files=("mathlib.cpp" "stddev.cpp" "arguments_parser.cpp")
+files=("src/mathlib.cpp" "src/stddev.cpp" "src/arguments_parser.cpp")
 flags=
 
 for f in "${files[@]}"; do

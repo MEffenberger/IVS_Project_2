@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: go to source directory
+      run: cd src
     - name: make
       run: make
     - name: clean
