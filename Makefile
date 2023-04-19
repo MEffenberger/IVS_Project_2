@@ -27,7 +27,8 @@ clean:
 	rm -f *.o $(TARGETS) stddev
 
 pack:
-	zip -r xeffen00_xvalik05_xhorut01_xhejni00.zip .
+#zip file will pack all the files and directories from the parent directory recursively and will be created in the parent directory
+	zip -r ../xeffen00_xvalik05_xhorut01_xhejni00.zip ../
 
 test:
 	@echo "==============================================================================="

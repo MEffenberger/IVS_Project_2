@@ -1,0 +1,102 @@
+GUI napoveda
+
+desetinna carka
+
+uzivatelska dokumentace:
+  V uživatelské dokumentaci bude mimo jiné i postup instalace a odinstalace programu pomocí instalátoru (odinstalátoru).
+  Dále bude uveden návod pro manuální (od)instalaci, tzn. postup překladu ze zdrojových kódů, vytvoření 
+  zástupců (ikonek) a dalších akcí, které provádí instalátor
+  V dokumentaci a v README musí být uvedeno, které prostředí jste zvolili a jak v něm projekt zprovoznit.
+
+programova dokumentace: 
+  K matematické knihovně i k celému programu musí být vygenerována programová dokumentace. Preferovaný nástroj je Doxygen.
+  default doxyfile: {doxygen -g}
+
+Na kalkulačce si povinně vyzkoušíte debugging – odevzdáte snímek obrazovky debuggeru v matematické knihovně.
+
+mockup tbd:
+  K programu bude vytvořen mockup uživatelského rozhraní další verze kalkulačky (plánované do budoucna), která bude 
+  podporovat vědecký mód, vykreslování grafů a nějakou další potenciálně užitečnou funkci (výpočet BMI, stopky, statistické funkce, …). 
+  Musí být jasné, jak bude nová verze vypadat a fungovat
+
+upgrade GUI source files na github main
+
+debianni balicek final tbd
+  ikonka
+
+zprava a vystup profiling:
+  Odevzdejte protokol obsahující výstup profileru a stručné shrnutí
+
+throw catch errors
+
+licha odmocnina
+
+makefile a struktura repozitare:
+  preklad spustitelneho souboru calc
+
+reminder, mrknout vic na ten copiloti kod na konci, hazi to pri uber extremne specifickym inputu errory
+
+hodnoceni.txt
+
+
+
+
+
+Do 26. 4. 2023 7:00 ráno vedoucí týmu odevzdá:
+  obsah repozitáře projektu (viz struktura výše) – tímto není myšlena pracovní kopie, ale kopie repozitáře (včetně historie),
+  instalátory programů (kalkulačky a programu pro výpočet směrodatné odchylky), které kromě samotných programů nainstalují i odinstalátory,
+  vygenerovanou programovou dokumentaci.
+  Vše bude v jednom adresáři xlogin01_xlogin02_xlogin03_xlogin04, který bude sbalený do archivu xlogin01_xlogin02_xlogin03_xlogin04.zip.
+Zkontrolujte, zda repozitář obsahuje vše potřebné:
+  uživatelskou příručku v PDF,
+  snímek obrazovky programu,
+  testy k matematické knihovně,
+  snímek obrazovky debuggeru či popis postupu debuggingu,
+  mockup(y) další verze kalkulačky,
+  informace o provedeném profilingu (v .txt, .pdf či obrázku),
+  soubor skutecnost.txt, který bude obsahovat informace o rozdílech mezi plánem projektu a skutečností,
+  soubor hodnoceni.txt (jenž byl popsán výše).
+
+
+
+
+
+doc/
+  vygenerovaná programová dokumentace
+install/
+  balík či instalátor programu kalkulačky
+  balík či instalátor programu pro výpočet směrodatné odchylky (profiling)
+repo/
+  mockup/
+    *.png|jpg|svg|pdf
+  plan/
+  profiling/
+    vystup.*
+    zprava.txt|pdf
+  src/
+    zdrojový kód a testy
+    Makefile
+    Doxyfile
+    zdrojový kód pro profiling
+  debugging.png|jpg|pdf|txt
+  dokumentace.pdf
+  screenshot.png|jpg
+  skutecnost.txt
+  hodnoceni.txt
+  README.md
+  .gitignore
+  .editorconfig
+
+
+
+Kompletní archiv se odevzdává do adresáře: /ivs-proj2/odevzdane/xlogin01 (kde xlogin01 je login vedoucího týmu) 
+na serveru ivs.fit.vutbr.cz. Odevzdání do jiného adresáře (např. do /home/xlogin01 či /home/xlogin01/ivs-proj2/...) 
+bude značně penalizováno. 
+
+
+Do IS VUT uložíte archiv, který bude obsahovat:
+  hodnoceni.txt
+  zdrojové soubory programu,
+  uživatelskou příručku (nebude-li příliš velká),
+  soubor odevzdani.txt, ve kterém bude uvedeno datum, čas a způsob odevzdání kompletního archivu a informace o tom, jaké 
+  další soubory jsou v něm obsaženy.
