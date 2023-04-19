@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>401</width>
+    <width>400</width>
     <height>610</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>610</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>610</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -71,7 +83,7 @@ background-color: rgb(206,206,206);
 }
 
 #button_del{
-background-image: ./pic/backspace.png;
+background-image: url(./pic/backspace.png);
 background-repeat: no-repeat;
 background-position: center;
 border-radius: 10px;
@@ -775,7 +787,7 @@ background-color: rgb(229,90,44);
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Nápověda&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Toto je nápověda vole&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;Nápověda&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="button_closeHelp">
@@ -797,7 +809,7 @@ background-color: rgb(229,90,44);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>401</width>
+     <width>400</width>
      <height>20</height>
     </rect>
    </property>

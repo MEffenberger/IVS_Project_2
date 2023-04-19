@@ -34,8 +34,6 @@ private slots:
     void on_button_del_released();
     void on_button_equal_released();
     void on_button_clear_released();
-
     void on_button_root_released();
-    
 };
 #endif // MAINWINDOW_H

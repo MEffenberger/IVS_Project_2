@@ -1,3 +1,15 @@
+/***
+ * Název projektu: Kalkulačka
+ * Soubor: stddev.cpp
+ * Datum: 20.4.2023
+ * Autor: Rogalo
+ * Popis: Soubor pro výpočet směrodatné odchylky
+ ***/
+/**
+* @file stddev.cpp
+* @author xhejni00
+* @brief výpočet směrodatné odchylky
+*/
 #include "mathlib.h"
 #include <iostream>
 

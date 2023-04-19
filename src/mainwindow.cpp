@@ -1,5 +1,18 @@
+/********************************************************
+ *  Název projektu: Kalkulačka
+ *  Soubor: mainwindow.cpp
+ *  Datum: 20.4.2023
+ *  Autor: Rogalo
+ *  Popis: Třída spojující uživatelské rozhraní a backend
+*********************************************************/
+
+/**
+ * @file mainwindow.cpp
+ * @brief Třída spojující uživatelské rozhraní a backend
+ * @author Rogalo
+ */
+
 #include "mainwindow.h"
-#include "helpwindow.h"
 #include "./ui_mainwindow.h"
 #include "QDebug"
 #include <QKeyEvent>
@@ -9,10 +22,7 @@
 #include "mathlib.cpp"
 #include "mathlib.h"
 #include "cmath"
-
-//for debug
-#include <iostream>
-#include <string>
+#include "iostream"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -43,7 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label_help->setVisible(false);
     ui->button_closeHelp->setVisible(false);
 
-    QObject::connect(ui->button_help, &QPushButton::clicked,this, [=]() {
+    QObject::connect(ui->button_help, &QPushButton::clicked, this, [=]() {
             if (ui->label_help->isVisible()) {
                 ui->button_help->clearFocus();
                 ui->button_closeHelp->clearFocus();
@@ -59,7 +69,7 @@ MainWindow::MainWindow(QWidget *parent)
 
             }
         });
-    QObject::connect(ui->button_closeHelp, &QPushButton::clicked,this, [=]() {
+    QObject::connect(ui->button_closeHelp, &QPushButton::clicked, this, [=]() {
         ui->button_closeHelp->clearFocus();
         ui->button_help->clearFocus();
         ui->label_help->setVisible(false);
@@ -186,6 +196,11 @@ void MainWindow::on_button_del_released()
 //Funkce prepise vyraz na pozadovany format pro predani parseru a ziska z nej vysledek
 void MainWindow::on_button_equal_released()
 {
+    if(ui->expression->text().isEmpty()){
+        on_button_clear_released();
+        return;
+    }
+
     ui->result->setText(ui->expression->text());
     //Formating expression to have valid format for parser
     ui->result->setText(ui->result->text().replace("÷", "/"));
@@ -194,14 +209,20 @@ void MainWindow::on_button_equal_released()
     ui->result->setText(ui->result->text().replace("<sup>", ""));
     ui->result->setText(ui->result->text().replace("</sup>", ""));
 
-    std::string vyraz = ui->result->text().toStdString();
-    std::cout << vyraz << std::endl;
-    std::string vysledek = arg_parser(vyraz);
-    std::cout << vysledek << std::endl;
-    QString toLabel = QString::fromStdString(vysledek);
+    std::string expression = ui->result->text().toStdString();
+
+    try {
+            std::string result = arg_parser(expression);
+            QString toLabel = QString::fromStdString(result);
+            toLabel.replace(",", ".");
+            ui->result->setText(toLabel);
+        } catch (const std::exception& e) {
+            std::cerr << "Exception caught: " << e.what() << std::endl;
+            ui->result->setText("Error");
+        }
 
 
-    ui->result->setText(toLabel);
+
 
     ui->button_equal->clearFocus();
 }
