@@ -43,7 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label_help->setVisible(false);
     ui->button_closeHelp->setVisible(false);
 
-    QObject::connect(ui->button_help, &QPushButton::clicked, [=]() {
+    QObject::connect(ui->button_help, &QPushButton::clicked,this, [=]() {
             if (ui->label_help->isVisible()) {
                 ui->button_help->clearFocus();
                 ui->button_closeHelp->clearFocus();
@@ -59,7 +59,7 @@ MainWindow::MainWindow(QWidget *parent)
 
             }
         });
-    QObject::connect(ui->button_closeHelp, &QPushButton::clicked, [=]() {
+    QObject::connect(ui->button_closeHelp, &QPushButton::clicked,this, [=]() {
         ui->button_closeHelp->clearFocus();
         ui->button_help->clearFocus();
         ui->label_help->setVisible(false);
