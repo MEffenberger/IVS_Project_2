@@ -24,14 +24,21 @@
 #include "cmath"
 #include "iostream"
 
+/**
+ * @brief Konstruktorová funkce pro třídu MainWindow
+ * Funkce inicializuje objekt MainWindow a nastavuje jeho uživatelské rozhraní
+ * vytvořením instance Ui::MainWindow
+ * @param parent Ukazatel na rodičovský widget
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+   ui->setupUi(this);
 
    ui->button_equal->setFocus();
 
+   // Propojení tlačítek s funkcí digit_pressed()
     connect(ui->button_0, SIGNAL(released()),this, SLOT(digit_pressed()));
     connect(ui->button_1, SIGNAL(released()),this, SLOT(digit_pressed()));
     connect(ui->button_2, SIGNAL(released()),this, SLOT(digit_pressed()));
@@ -50,47 +57,64 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->button_lpar, SIGNAL(released()),this, SLOT(digit_pressed()));
     connect(ui->button_rpar, SIGNAL(released()),this, SLOT(digit_pressed()));
     connect(ui->button_mod, SIGNAL(released()),this, SLOT(digit_pressed()));
+
+    // Skrytí nápovědového okna při spuštění
     ui->label_help->setVisible(false);
     ui->button_closeHelp->setVisible(false);
 
+    // Propojení tlačítka pro zobrazení a skrytí nápovědy (otazník)
     QObject::connect(ui->button_help, &QPushButton::clicked, this, [=]() {
+            // Skrytí nápovědy
             if (ui->label_help->isVisible()) {
                 ui->button_help->clearFocus();
                 ui->button_closeHelp->clearFocus();
                 ui->label_help->setVisible(false);
                 ui->button_closeHelp->setVisible(false);
-
-
-            } else {
+            }
+            // Zobrazení nápovědy
+            else {
                 ui->button_help->clearFocus();
                 ui->button_closeHelp->clearFocus();
                 ui->label_help->setVisible(true);
                 ui->button_closeHelp->setVisible(true);
-
             }
         });
+    // Propojení tlačítka pro skrytí nápovědy (křížek)
     QObject::connect(ui->button_closeHelp, &QPushButton::clicked, this, [=]() {
         ui->button_closeHelp->clearFocus();
         ui->button_help->clearFocus();
         ui->label_help->setVisible(false);
         ui->button_closeHelp->setVisible(false);
-
         });
 
 }
 
+/**
+ * @brief Destruktorová funkce pro třídu MainWindow
+ * Funkce odstraňuje promměnnou ui a uvolňuje tak pamět alokovanou
+ * pro objekt Ui::MainWindow
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-//Function which writes into expression label
+
+/**
+ * @brief Pomocná funkce pro zadání výrazu pomocí klávesnice
+ * Funkce přidá znak do labelu s výrazem který má být vypočítán
+ * @param num Znak, který bude do výrazu přidán
+ */
 void MainWindow::typeIn(QString num){
     ui->expression->setText(ui->expression->text() + num);
-
 }
 
-//Function to input from keyboard
+/**
+ * @brief Funkce pro zadání výrazu pomocí klávesnice
+ * Funkce reaguje na stisk klávesy (číslic, operátorů, ...)
+ * zavoláním funkce \ref typeIn
+ * @param event Ukazatel na event stisku klávesy
+ */
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_0) {
@@ -162,7 +186,10 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
 }
 
-//Function to input numbers and some of the arithmethic symbols to epxression label
+/**
+ * @brief Funkce pro zadání výrazu pomocí myši
+ * Kliknutím na tlačítko je do labelu s výrazem přidán další znak
+ */
 void MainWindow::digit_pressed(){
     QPushButton * button = (QPushButton*)sender();
 
@@ -171,38 +198,100 @@ void MainWindow::digit_pressed(){
     return;
 }
 
-//Functions to convert power of, absolut value and factorial to right input on expression display
+/**
+ * @brief Funkce pro přidání znaku mocniny (^) do výrazu
+ * Pomocí tlačítka je do labelu s výrazem přidán znak '^'
+ */
 void MainWindow::on_button_pow_released()
 {
     ui->expression->setText(ui->expression->text() + "^");
     ui->button_pow->clearFocus();
 }
 
+/**
+ * @brief Funkce pro přidání znaku faktoriálu (!) do výrazu
+ * Pomocí tlačítka je do labelu s výrazem přidán znak '!'
+ */
 void MainWindow::on_button_fact_released()
 {
     ui->expression->setText(ui->expression->text() + "!");
     ui->button_fact->clearFocus();
 }
 
-//Function which deletes last character from expression
+/**
+ * @brief Funkce implementující delete
+ * Funkce smaže z labelu s výrazem poslední znak
+ */
 void MainWindow::on_button_del_released()
 {
     QString text = ui->expression->text();
+    if (text.endsWith(QChar(0x221A))) {
+        QChar num = text[text.length()-8];
+
+        text.remove(text.length() - 13, 13);
+        text.append(num);
+
+
+
+        ui->expression->setText(text);
+        ui->button_del->clearFocus();
+    }else{
         text.chop(1);
         ui->expression->setText(text);
         ui->button_del->clearFocus();
+    }
+}
+
+
+/**
+ * @brief Funkce implementující clear
+ * Funkce smaže celý obsah labelu s výrazem a label s výsledkem nastaví na '0'
+ */
+void MainWindow::on_button_clear_released()
+{
+    ui->expression->setText("");
+    ui->result->setText("0");
+    ui->button_clear->clearFocus();
+}
+
+/**
+ * @brief Funkce implementující zobrazení obecné odmocniny
+ * Funkce po stisknutí tlačítka obecné odmocniny vloží předchozí znak
+ * do superscriptu (pro lepší představu uživatele co je odmocnina) a vypíše znak
+ * odmocniny
+ */
+void MainWindow::on_button_root_released()
+{
+  int charIndex = (ui->expression->text().length() - 1);
+  QString expression =  ui->expression->text();
+
+  // Vložení předchozího znaku do superscriptu
+  expression.replace(charIndex, 1, "<sup>" + QString(expression[charIndex]) + "</sup>");
+  expression.append(QString::fromUtf8("\u221A"));
+  ui->expression->setText(expression);
+  ui->button_root->clearFocus();
+
 }
 
 //Funkce prepise vyraz na pozadovany format pro predani parseru a ziska z nej vysledek
+/**
+ * @brief Funkce pro předání výrazu parseru a matematické knihovně
+ * Funkce po stistknutí tlačítka '=' nahradí znaky (÷, ×, odmocnina a superscript)
+ * v labelu výrazu (ui->expression)
+ * za znaky podporované parserem argumentů (/, *, v)
+ * Následně je pak výraz předán funkci arg_parser() která vrací výsledek.
+ * Výsledek je pak nastaven do labelu s výsledkem (ui->result)
+ */
 void MainWindow::on_button_equal_released()
 {
+    // Pokud je label s výrazem prázdný je label s výsledkem nastaven na '0'
     if(ui->expression->text().isEmpty()){
         on_button_clear_released();
         return;
     }
 
     ui->result->setText(ui->expression->text());
-    //Formating expression to have valid format for parser
+    // Nahrazení znaků za znaky podporované parserem
     ui->result->setText(ui->result->text().replace("÷", "/"));
     ui->result->setText(ui->result->text().replace("×", "*"));
     ui->result->setText(ui->result->text().replace("\u221A", "v"));
@@ -211,6 +300,7 @@ void MainWindow::on_button_equal_released()
 
     std::string expression = ui->result->text().toStdString();
 
+    // V případě chyby je místo výsledku vyprintována chybová hláška
     try {
             std::string result = arg_parser(expression);
             QString toLabel = QString::fromStdString(result);
@@ -218,34 +308,13 @@ void MainWindow::on_button_equal_released()
             ui->result->setText(toLabel);
         } catch (const std::exception& e) {
             std::cerr << "Exception caught: " << e.what() << std::endl;
-            ui->result->setText("Error");
+            ui->result->setText(QString::fromStdString(e.what()));
         }
-
-
-
 
     ui->button_equal->clearFocus();
 }
 
-//Function which will clear expression input and result input
-void MainWindow::on_button_clear_released()
-{
-    ui->expression->setText("");
-    ui->result->setText("0");
-    ui->button_clear->clearFocus();
-}
 
-//Formating the root visual
-void MainWindow::on_button_root_released()
-{
-  int charIndex = (ui->expression->text().length() - 1);
-  QString expression =  ui->expression->text();
-  expression.replace(charIndex, 1, "<sup>" + QString(expression[charIndex]) + "</sup>");
-  expression.append(QString::fromUtf8("\u221A"));
-  ui->expression->setText(expression);
-  ui->button_root->clearFocus();
-
-}
 
 
 
