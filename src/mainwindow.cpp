@@ -14,6 +14,7 @@
 
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "mainwindow.h"
 #include "QDebug"
 #include <QKeyEvent>
 #include <qstring.h>
