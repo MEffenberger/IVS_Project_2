@@ -60,7 +60,7 @@ double lib_div (double num1, double num2) {
  */
 double lib_pow (double num, double exp) {
 
-    if ((num == 0 && exp == 0) || int(exp) != exp) {
+    if (int(exp) != exp) {
         throw std::runtime_error(ERROR_OTHER);
     }
 
