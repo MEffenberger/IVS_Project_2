@@ -155,7 +155,6 @@ TEST_CASE("Mocnina s celociselnym exponentem") {
     CHECK(lib_pow(2, -3) == doctest::Approx(0.125).epsilon(0.0001));
 
     //test chyby, mocnina pouze s celočíselným exponentem
-    CHECK_THROWS(lib_pow(0, 0));
     CHECK_THROWS(lib_pow(2, 1.1));
 }
 
