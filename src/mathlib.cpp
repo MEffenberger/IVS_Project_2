@@ -1,78 +1,112 @@
-#include "mathlib.h"
-
-
+/********************************************************
+ *  Název projektu: Kalkulačka
+ *  Soubor: mathlib.cpp
+ *  Datum: 23.4.2023
+ *  Autor: Rogalo
+ *  Popis: Matematická knihovna pro kalkulačku
+*********************************************************/
 
 /**
- * @brief function to add two numbers
- * @param num1 first operand
- * @param num2 second operand
- * @return sum of num1 and num2
+ * @file mathlib.cpp
+ * @brief Matematická knihovna pro kalkulačku
+ * @author Rogalo
+ */
+
+// Knihovna s makry a konstantami
+#include "mathlib.h"
+
+/**
+ * @brief Funkce, která sečte dva operandy
+ * @param num1 První operand
+ * @param num2 Druhý operand
+ * @return Součet num1 a num2
  */
 double lib_add (double num1, double num2) {
 
-    return num1 + num2;
+    double result = num1 + num2;
+    if (result > DBL_MAX || result < DBL_MIN) {
+        throw std::overflow_error(ERROR_OUT_OF_RANGE);
+    }
+    return result;
 }
 
 
 /**
- * @brief function to subtract two numbers
- * @param num1 first operand
- * @param num2 second operand
- * @return difference of num1 and num2
+ * @brief Funkce, která odečte dva operandy
+ * @param num1 První operand
+ * @param num2 Druhý operand
+ * @return Rozdíl num1 a num2
  */
 double lib_sub (double num1, double num2) {
 
-    return num1 - num2;
+
+    double result = num1 - num2;
+    if (result > DBL_MAX || result < DBL_MIN) {
+        throw std::overflow_error(ERROR_OUT_OF_RANGE);
+    }
+    return result;
 }
 
 
 /**
- * @brief function to multiply two numbers
- * @param num1 first operand
- * @param num2 second operand
- * @return product of num1 and num2
+ * @brief Funkce, která vynásobí dva operandy
+ * @param num1 První operand
+ * @param num2 Druhý operand
+ * @return Součin num1 a num2
  */
 double lib_mul (double num1, double num2) {
 
-    return num1 * num2;
+    double result = num1 * num2;
+    if (result > DBL_MAX || result < DBL_MIN) {
+        throw std::overflow_error(ERROR_OUT_OF_RANGE);
+    }
+    return result;
 }
 
 
 /**
- * @brief function to divide two numbers
- * @param num1 first operand
- * @param num2 second operand
- * @return quotient of num1 and num2
+ * @brief Funkce, která vydělí dva operandy
+ * @param num1 První operand
+ * @param num2 Druhý operand
+ * @return Podíl num1 a num2
  */
 double lib_div (double num1, double num2) {
 
     if (num2 == 0) {
         throw std::runtime_error(ERROR_DIV);
     }
-    return num1 / num2;
+
+    double result = num1 / num2;
+    if (result > DBL_MAX || result < DBL_MIN) {
+        throw std::overflow_error(ERROR_OUT_OF_RANGE);
+    }
+    return result;
 }
 
 /**
- * @brief function to calculate the power of a number
- * @param num number to calculate the power of
- * @param exp exponent
- * @return num^exp
+ * @brief Funkce, která umocní první operand na druhý
+ * @param num První operand = mocněnec
+ * @param exp Druhý operand = mocnitel
+ * @return První operand umocněný na druhý
  */
 double lib_pow (double num, double exp) {
 
     if (int(exp) != exp) {
         throw std::runtime_error(ERROR_OTHER);
     }
-
-    return pow(num, exp);
+    double result = pow(num, exp);
+    if (result > DBL_MAX || result < DBL_MIN) {
+        throw std::overflow_error(ERROR_OUT_OF_RANGE);
+    }
+    return result;
 }
 
 
 /**
- * @brief function to calculate the root of a number
- * @param num number to calculate the root of
- * @param root root
- * @return num^root
+ * @brief Funkce, která odmocní první operand druhým
+ * @param num Odmocňované číslo
+ * @param root Odmocnitel
+ * @return Obecná odmocnina
  */
 double lib_root (double num, double root) {
 
@@ -85,16 +119,24 @@ double lib_root (double num, double root) {
     }
 
     if(num < 0 && std::fmod(root, 2) != 0) {
-        return -std::pow(-num, 1.0/root);
+        double result = -std::pow(-num, 1.0/root);
+        if (result > DBL_MAX || result < DBL_MIN) {
+            throw std::overflow_error(ERROR_OUT_OF_RANGE);
+        }
+        return result;
     }
-    return std::pow(num, 1.0/root);
+    double result = std::pow(num, 1.0/root);
+    if (result > DBL_MAX || result < DBL_MIN) {
+        throw std::overflow_error(ERROR_OUT_OF_RANGE);
+    }
+    return result;
 }
 
 
 /**
- * @brief function to calculate the factorial of a number
- * @param num number to calculate the factorial of
- * @return num!
+ * @brief Funkce, která vypočítá faktoriál čísla
+ * @param num Číslo, kterému se vypočítá faktoriál
+ * @return Faktoriál num
  */
 double lib_fact (double num) {
 
@@ -111,10 +153,10 @@ double lib_fact (double num) {
 
 
 /**
- * @brief function to calculate the modulo of two numbers
- * @param num1 first operand
- * @param num2 second operand
- * @return modulo of num1 and num2
+ * @brief Funkce, která vypočítá modulo čísla
+ * @param num1 První operand
+ * @param num2 Druhý operand
+ * @return Modulo num1 a num2
  */
 double lib_mod (double num1, double num2) {
 
@@ -123,3 +165,5 @@ double lib_mod (double num1, double num2) {
     }
     return fmod(num1, num2);
 }
+
+/** Konec souboru mathlib.cpp */
