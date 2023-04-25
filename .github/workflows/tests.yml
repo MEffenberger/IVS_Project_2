@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: dependencies
+      run: cd src && chmod +x install.sh && ./install.sh
     - name: make
       run: cd src && make
     - name: test
