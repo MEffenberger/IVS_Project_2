@@ -26,6 +26,8 @@
 #include <iostream>
 #include <algorithm>
 #include <sstream>
+#include <clocale>
+
 
 // Prototyp funkce
 std::string arg_parser(std::string input_string);

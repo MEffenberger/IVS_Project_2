@@ -23,6 +23,15 @@
  */
 std::string arg_parser(std::string input_string) {
 
+
+    // Zjištění, zda je na systému desetinný oddělovač čárka nebo tečka
+    bool localization_comma = false;
+    lconv* locale_info = localeconv();
+    char decimal_point = (locale_info->decimal_point[0] == '.') ? '.' : ',';
+    if (decimal_point == ',') {
+    localization_comma = true;
+    }
+
     // Error handling - poslední znak nesmí být operátor
     if(input_string.back() == '^' || input_string.back() == 'v' ||
        input_string.back() == '*' || input_string.back() == '/' ||
@@ -168,7 +177,8 @@ std::string arg_parser(std::string input_string) {
         if (isdigit(token[0]) || token[0] == '.')
         {
             // Převod desetinné čárky na desetinnou tečku, možné ošetření konverze kvůli lokalizaci uživatelova systému
-            std::replace(token.begin(), token.end(), '.', ',');
+            if (localization_comma) std::replace(token.begin(), token.end(), '.', ',');
+
             result_stack.push_back(std::stod(token));
         } else
         {
