@@ -304,9 +304,14 @@ void MainWindow::on_button_equal_released()
     /// V případě chyby je místo výsledku vyprintována chybová hláška
     try {
             std::string result = arg_parser(expression);
+
             QString toLabel = QString::fromStdString(result);
+            if(toLabel == "80085"){
+                ui->result->setText("Ha, BOOBS!");
+            }else {
             toLabel.replace(",", ".");
             ui->result->setText(toLabel);
+            }
         } catch (const std::exception& e) {
             std::cerr << "Exception caught: " << e.what() << std::endl;
             ui->result->setText(QString::fromStdString(e.what()));
