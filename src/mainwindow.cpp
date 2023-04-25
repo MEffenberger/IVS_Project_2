@@ -39,7 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
 
    ui->button_equal->setFocus();
 
-   // Propojení tlačítek s funkcí digit_pressed()
+   /// Propojení tlačítek s funkcí digit_pressed()
     connect(ui->button_0, SIGNAL(released()),this, SLOT(digit_pressed()));
     connect(ui->button_1, SIGNAL(released()),this, SLOT(digit_pressed()));
     connect(ui->button_2, SIGNAL(released()),this, SLOT(digit_pressed()));
@@ -59,11 +59,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->button_rpar, SIGNAL(released()),this, SLOT(digit_pressed()));
     connect(ui->button_mod, SIGNAL(released()),this, SLOT(digit_pressed()));
 
-    // Skrytí nápovědového okna při spuštění
+    /// Skrytí nápovědového okna při spuštění
     ui->label_help->setVisible(false);
     ui->button_closeHelp->setVisible(false);
 
-    // Propojení tlačítka pro zobrazení a skrytí nápovědy (otazník)
+    /// Propojení tlačítka pro zobrazení a skrytí nápovědy (otazník)
     QObject::connect(ui->button_help, &QPushButton::clicked, this, [=]() {
             // Skrytí nápovědy
             if (ui->label_help->isVisible()) {
@@ -72,7 +72,7 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->label_help->setVisible(false);
                 ui->button_closeHelp->setVisible(false);
             }
-            // Zobrazení nápovědy
+            /// Zobrazení nápovědy
             else {
                 ui->button_help->clearFocus();
                 ui->button_closeHelp->clearFocus();
@@ -80,7 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
                 ui->button_closeHelp->setVisible(true);
             }
         });
-    // Propojení tlačítka pro skrytí nápovědy (křížek)
+    /// Propojení tlačítka pro skrytí nápovědy (křížek)
     QObject::connect(ui->button_closeHelp, &QPushButton::clicked, this, [=]() {
         ui->button_closeHelp->clearFocus();
         ui->button_help->clearFocus();
@@ -285,14 +285,14 @@ void MainWindow::on_button_root_released()
  */
 void MainWindow::on_button_equal_released()
 {
-    // Pokud je label s výrazem prázdný je label s výsledkem nastaven na '0'
+    /// Pokud je label s výrazem prázdný je label s výsledkem nastaven na '0'
     if(ui->expression->text().isEmpty()){
         on_button_clear_released();
         return;
     }
 
     ui->result->setText(ui->expression->text());
-    // Nahrazení znaků za znaky podporované parserem
+    /// Nahrazení znaků za znaky podporované parserem
     ui->result->setText(ui->result->text().replace("÷", "/"));
     ui->result->setText(ui->result->text().replace("×", "*"));
     ui->result->setText(ui->result->text().replace("\u221A", "v"));
@@ -301,7 +301,7 @@ void MainWindow::on_button_equal_released()
 
     std::string expression = ui->result->text().toStdString();
 
-    // V případě chyby je místo výsledku vyprintována chybová hláška
+    /// V případě chyby je místo výsledku vyprintována chybová hláška
     try {
             std::string result = arg_parser(expression);
             QString toLabel = QString::fromStdString(result);
