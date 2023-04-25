@@ -168,7 +168,7 @@ std::string arg_parser(std::string input_string) {
         if (isdigit(token[0]) || token[0] == '.')
         {
             // Převod desetinné čárky na desetinnou tečku, možné ošetření konverze kvůli lokalizaci uživatelova systému
-            std::replace(token.begin(), token.end(), ',', '.');
+            std::replace(token.begin(), token.end(), '.', ',');
             result_stack.push_back(std::stod(token));
         } else
         {
