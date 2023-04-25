@@ -1,0 +1,318 @@
+\hypertarget{arguments__parser_8h}{}\doxysection{Dokumentace souboru arguments\+\_\+parser.\+h}
+\label{arguments__parser_8h}\index{arguments\_parser.h@{arguments\_parser.h}}
+
+
+Hlavičkový soubor pro parser kalkulačky.  
+
+
+{\ttfamily \#include \char`\"{}mathlib.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Graf závislostí na vkládaných souborech pro arguments\+\_\+parser.\+h\+:
+% FIG 0
+Následující graf ukazuje, které soubory přímo nebo nepřímo vkládají tento soubor\+:
+% FIG 1
+\doxysubsection*{Funkce}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{arguments__parser_8h_a6c4e1a0f2d45b6174adfab4f3184155c}{arg\+\_\+parser}} (std\+::string input\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Zpracování vstupního řetězce s následným výpočtem na základě Shunting-\/yard algoritmu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailní popis}
+Hlavičkový soubor pro parser kalkulačky. 
+
+\begin{DoxyAuthor}{Autor}
+Rogalo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Dokumentace funkcí}
+\mbox{\Hypertarget{arguments__parser_8h_a6c4e1a0f2d45b6174adfab4f3184155c}\label{arguments__parser_8h_a6c4e1a0f2d45b6174adfab4f3184155c}} 
+\index{arguments\_parser.h@{arguments\_parser.h}!arg\_parser@{arg\_parser}}
+\index{arg\_parser@{arg\_parser}!arguments\_parser.h@{arguments\_parser.h}}
+\doxysubsubsection{\texorpdfstring{arg\_parser()}{arg\_parser()}}
+{\footnotesize\ttfamily std\+::string arg\+\_\+parser (\begin{DoxyParamCaption}\item[{std\+::string}]{input\+\_\+string }\end{DoxyParamCaption})}
+
+
+
+Zpracování vstupního řetězce s následným výpočtem na základě Shunting-\/yard algoritmu. 
+
+\begin{DoxySeeAlso}{Viz také}
+\href{https://en.wikipedia.org/wiki/Shunting-yard_algorithm}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Shunting-\/yard\+\_\+algorithm}} 
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Chyba}
+\item[\mbox{\hyperlink{bug__bug000001}{Chyba}}]Chybné zpracování vstupního řetězce s lichým počtem a více než třemi mínusy za sebou, např. 3---1 \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parametry}
+{\em input\+\_\+string} & Vstupní řetězec \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+Výsledný řetězec ve validním formátu 
+\end{DoxyReturn}
+$\ast$$\ast$ Změna zpracování výsledku pomocí knihovny, lepší zobrazování krajních hodnot $\ast$$\ast$//
+
+Definice je uvedena na řádku 24 v souboru arguments\+\_\+parser.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                                              \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{comment}{// Error handling -\/ poslední znak nesmí být operátor}}
+\DoxyCodeLine{27     \textcolor{keywordflow}{if}(input\_string.back() == \textcolor{charliteral}{'\string^'} || input\_string.back() == \textcolor{charliteral}{'v'} ||}
+\DoxyCodeLine{28        input\_string.back() == \textcolor{charliteral}{'*'} || input\_string.back() == \textcolor{charliteral}{'/'} ||}
+\DoxyCodeLine{29        input\_string.back() == \textcolor{charliteral}{'\%'} || input\_string.back() == \textcolor{charliteral}{'+'} ||}
+\DoxyCodeLine{30        input\_string.back() == \textcolor{charliteral}{'-\/'} || input\_string.back() == \textcolor{charliteral}{'('})\{}
+\DoxyCodeLine{31         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Check last char!"{}});}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{// Error handling -\/ poslední znak nesmí být operátor}}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if}(input\_string.front() == \textcolor{charliteral}{'\string^'} || input\_string.front() == \textcolor{charliteral}{'v'} ||}
+\DoxyCodeLine{36        input\_string.front() == \textcolor{charliteral}{'*'} || input\_string.front() == \textcolor{charliteral}{'/'} ||}
+\DoxyCodeLine{37        input\_string.front() == \textcolor{charliteral}{'\%'} || input\_string.front() == \textcolor{charliteral}{'!'} ||}
+\DoxyCodeLine{38        input\_string.front() == \textcolor{charliteral}{')'})\{}
+\DoxyCodeLine{39         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Check first char!"{}});}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} ent\_par = 0;}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} close\_par = 0;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} ch : input\_string)}
+\DoxyCodeLine{46     \{}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{'('}) \{}
+\DoxyCodeLine{48             ent\_par++;}
+\DoxyCodeLine{49         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ch == \textcolor{charliteral}{')'}) \{}
+\DoxyCodeLine{50             close\_par++;}
+\DoxyCodeLine{51         \}}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53     \textcolor{comment}{// Error handling -\/ kontrola závorek, počet otevřených musí být stejný jako počet uzavřených}}
+\DoxyCodeLine{54     \textcolor{keywordflow}{if} (ent\_par != close\_par) \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Check the ')','('!"{}});}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{// Pomocné vektory pro zpracování vstupu}}
+\DoxyCodeLine{57     std::vector<std::string> output\_stack;}
+\DoxyCodeLine{58     std::vector<double> result\_stack;}
+\DoxyCodeLine{59     std::vector<char> operator\_stack;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{// Precedenční tabulka pro operátory a závorky, '\_' je placeholder pro unární operátor, 'v' je placeholder pro root}}
+\DoxyCodeLine{62     std::map<char, int> precedence}
+\DoxyCodeLine{63             \{}
+\DoxyCodeLine{64                     \{\textcolor{charliteral}{'\string^'}, 4\},}
+\DoxyCodeLine{65                     \{\textcolor{charliteral}{'!'}, 5\},}
+\DoxyCodeLine{66                     \{\textcolor{charliteral}{'v'}, 3\},}
+\DoxyCodeLine{67                     \{\textcolor{charliteral}{'*'}, 2\},}
+\DoxyCodeLine{68                     \{\textcolor{charliteral}{'/'}, 2\},}
+\DoxyCodeLine{69                     \{\textcolor{charliteral}{'\%'}, 2\},}
+\DoxyCodeLine{70                     \{\textcolor{charliteral}{'+'}, 1\},}
+\DoxyCodeLine{71                     \{\textcolor{charliteral}{'-\/'}, 1\},}
+\DoxyCodeLine{72                     \{\textcolor{charliteral}{'('}, 0\},}
+\DoxyCodeLine{73                     \{\textcolor{charliteral}{')'}, 0\},}
+\DoxyCodeLine{74                     \{\textcolor{charliteral}{'\_'}, 6\}}
+\DoxyCodeLine{75             \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{comment}{// Potřebný flag pro zpracování unárních operátorů}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{bool} last\_was\_operator = \textcolor{keyword}{true};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{comment}{// Potřebný flag pro zpracování faktoriálu pro zachování správné precedence při výrazu <num>!-\/<num>}}
+\DoxyCodeLine{81     \textcolor{keywordtype}{bool} last\_was\_factorial = \textcolor{keyword}{false};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{long} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < input\_string.length(); i++)}
+\DoxyCodeLine{85     \{}
+\DoxyCodeLine{86         \textcolor{keywordtype}{char} c = input\_string[i];}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keywordflow}{if} (isdigit(c) || c == \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{89         \{}
+\DoxyCodeLine{90             \textcolor{comment}{// zpracování číselného vstupu}}
+\DoxyCodeLine{91             std::string number\_str;}
+\DoxyCodeLine{92             \textcolor{keywordflow}{while} (i < input\_string.length() \&\& (isdigit(input\_string[i]) || input\_string[i] == \textcolor{charliteral}{'.'}))}
+\DoxyCodeLine{93             \{}
+\DoxyCodeLine{94                 number\_str += input\_string[i];}
+\DoxyCodeLine{95                 i++;}
+\DoxyCodeLine{96             \}}
+\DoxyCodeLine{97             i-\/-\/;  \textcolor{comment}{// posunutí indexu o jeden znak zpět pro zpracování posledního čísla}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99             \textcolor{comment}{// ošetření krajních vstupů typu "{}2..2"{}}}
+\DoxyCodeLine{100             \textcolor{keywordtype}{int} periodCount = std::count(number\_str.begin(), number\_str.end(), \textcolor{charliteral}{'.'});}
+\DoxyCodeLine{101             \textcolor{keywordflow}{if} (periodCount > 1) \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_OTHER);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103             output\_stack.push\_back(number\_str);}
+\DoxyCodeLine{104             last\_was\_operator = \textcolor{keyword}{false};}
+\DoxyCodeLine{105         \}}
+\DoxyCodeLine{106         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'('})}
+\DoxyCodeLine{107         \{}
+\DoxyCodeLine{108             operator\_stack.push\_back(c);}
+\DoxyCodeLine{109             last\_was\_operator = \textcolor{keyword}{true};}
+\DoxyCodeLine{110         \}}
+\DoxyCodeLine{111         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{')'})}
+\DoxyCodeLine{112         \{}
+\DoxyCodeLine{113             \textcolor{keywordflow}{while} (operator\_stack.back() != \textcolor{charliteral}{'('})}
+\DoxyCodeLine{114             \{}
+\DoxyCodeLine{115                 output\_stack.push\_back(std::string(1, operator\_stack.back()));}
+\DoxyCodeLine{116                 operator\_stack.pop\_back();}
+\DoxyCodeLine{117             \}}
+\DoxyCodeLine{118             operator\_stack.pop\_back();}
+\DoxyCodeLine{119             last\_was\_operator = \textcolor{keyword}{false};}
+\DoxyCodeLine{120         \}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'+'} || c == \textcolor{charliteral}{'-\/'} || c == \textcolor{charliteral}{'*'} || c == \textcolor{charliteral}{'/'} || c == \textcolor{charliteral}{'\%'} || c == \textcolor{charliteral}{'\string^'} || c == \textcolor{charliteral}{'v'} || c == \textcolor{charliteral}{'!'})}
+\DoxyCodeLine{123         \{}
+\DoxyCodeLine{124             \textcolor{comment}{// Ignorování případu, kdy je za sebou více operátorů (např. "{}2++2"{} + podpora pro faktorial}}
+\DoxyCodeLine{125             \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'+'} \&\& last\_was\_operator \&\& !last\_was\_factorial) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127             \textcolor{comment}{// Podmínka pro zpracování unárního mínus}}
+\DoxyCodeLine{128             \textcolor{keywordflow}{if} ((last\_was\_operator \&\& !last\_was\_factorial \&\& c == \textcolor{charliteral}{'-\/'}) || (c == \textcolor{charliteral}{'-\/'} \&\& (i == 0 || input\_string[i-\/1] == \textcolor{charliteral}{'('})))}
+\DoxyCodeLine{129             \{}
+\DoxyCodeLine{130                 c = \textcolor{charliteral}{'\_'};}
+\DoxyCodeLine{131             \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133             \textcolor{comment}{// Podmínky pro správné zpracování operátorů na základě precedence}}
+\DoxyCodeLine{134             \textcolor{keywordflow}{while} (!operator\_stack.empty() \&\& precedence[operator\_stack.back()] >= precedence[c])}
+\DoxyCodeLine{135             \{}
+\DoxyCodeLine{136                 output\_stack.push\_back(std::string(1, operator\_stack.back()));}
+\DoxyCodeLine{137                 operator\_stack.pop\_back();}
+\DoxyCodeLine{138             \}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140             \textcolor{keywordflow}{if}(last\_was\_operator \&\& c != \textcolor{charliteral}{'\_'} \&\& !last\_was\_factorial) \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_OTHER);  \textcolor{comment}{// Ošetření chybového vstupu typu "{}2**2"{}}}
+\DoxyCodeLine{141             \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'!'} \&\& last\_was\_factorial) \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_OTHER);                       \textcolor{comment}{// Ošetření chybového vstupu typu "{}2!!2"{}}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143             c == \textcolor{charliteral}{'!'} ? last\_was\_factorial = true : last\_was\_factorial = \textcolor{keyword}{false};              \textcolor{comment}{// Podmínka pro zpracování faktoriálu}}
+\DoxyCodeLine{144             operator\_stack.push\_back(c);}
+\DoxyCodeLine{145             last\_was\_operator = \textcolor{keyword}{true};}
+\DoxyCodeLine{146         \}}
+\DoxyCodeLine{147         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{' '})\{}
+\DoxyCodeLine{148             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{149         \}}
+\DoxyCodeLine{150         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{151             \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_OTHER);}
+\DoxyCodeLine{152         \}}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{comment}{// Převod zpracovaného výrazu na reverzní polskou notaci}}
+\DoxyCodeLine{156     \textcolor{keywordflow}{while} (!operator\_stack.empty())}
+\DoxyCodeLine{157     \{}
+\DoxyCodeLine{158         output\_stack.push\_back(std::string(1, operator\_stack.back()));}
+\DoxyCodeLine{159         operator\_stack.pop\_back();}
+\DoxyCodeLine{160     \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{163     \textcolor{comment}{//** výpočet výsledku z reverzní polské notace **//}}
+\DoxyCodeLine{165 \textcolor{comment}{}}
+\DoxyCodeLine{166     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& token : output\_stack)}
+\DoxyCodeLine{167     \{}
+\DoxyCodeLine{168         \textcolor{keywordflow}{if} (isdigit(token[0]) || token[0] == \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{169         \{}
+\DoxyCodeLine{170             \textcolor{comment}{// Převod desetinné čárky na desetinnou tečku, možné ošetření konverze kvůli lokalizaci uživatelova systému}}
+\DoxyCodeLine{171             std::replace(token.begin(), token.end(), \textcolor{charliteral}{'.'}, \textcolor{charliteral}{','});}
+\DoxyCodeLine{172             result\_stack.push\_back(std::stod(token));}
+\DoxyCodeLine{173         \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{174         \{}
+\DoxyCodeLine{175             \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'\_'}) \{                  \textcolor{comment}{// Nutný převod unárního mínus na nový symbol pro správné zpracování}}
+\DoxyCodeLine{176                 \textcolor{keywordtype}{double} op2 = result\_stack.back();}
+\DoxyCodeLine{177                 result\_stack.pop\_back();}
+\DoxyCodeLine{178                 result\_stack.push\_back(-\/op2);}
+\DoxyCodeLine{179             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'+'}) \{}
+\DoxyCodeLine{180                 \textcolor{keywordtype}{double} op2 = result\_stack.back();}
+\DoxyCodeLine{181                 result\_stack.pop\_back();}
+\DoxyCodeLine{182                 \textcolor{keywordtype}{double} op1 = result\_stack.back();}
+\DoxyCodeLine{183                 result\_stack.pop\_back();}
+\DoxyCodeLine{184                 result\_stack.push\_back(\mbox{\hyperlink{mathlib_8cpp_af6413b1a47a3e17fb4562b114cace645}{lib\_add}}(op1, op2));}
+\DoxyCodeLine{185             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'-\/'}) \{}
+\DoxyCodeLine{186                 \textcolor{keywordtype}{double} op2 = result\_stack.back();}
+\DoxyCodeLine{187                 result\_stack.pop\_back();}
+\DoxyCodeLine{188                 \textcolor{keywordtype}{double} op1 = result\_stack.back();}
+\DoxyCodeLine{189                 result\_stack.pop\_back();}
+\DoxyCodeLine{190                 result\_stack.push\_back(\mbox{\hyperlink{mathlib_8cpp_ada04beac0cfbb842690d63a3af33dce3}{lib\_sub}}(op1, op2));}
+\DoxyCodeLine{191             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'*'}) \{}
+\DoxyCodeLine{192                 \textcolor{keywordtype}{double} op2 = result\_stack.back();}
+\DoxyCodeLine{193                 result\_stack.pop\_back();}
+\DoxyCodeLine{194                 \textcolor{keywordtype}{double} op1 = result\_stack.back();}
+\DoxyCodeLine{195                 result\_stack.pop\_back();}
+\DoxyCodeLine{196                 result\_stack.push\_back(\mbox{\hyperlink{mathlib_8cpp_a81f3050f4fd1cfd66dc119f6b4ef7d3a}{lib\_mul}}(op1, op2));}
+\DoxyCodeLine{197             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'/'}) \{}
+\DoxyCodeLine{198                 \textcolor{keywordtype}{double} op2 = result\_stack.back();}
+\DoxyCodeLine{199                 result\_stack.pop\_back();}
+\DoxyCodeLine{200                 \textcolor{keywordtype}{double} op1 = result\_stack.back();}
+\DoxyCodeLine{201                 result\_stack.pop\_back();}
+\DoxyCodeLine{202                 result\_stack.push\_back(\mbox{\hyperlink{mathlib_8cpp_a1d583ead7f80f6c8afef9f5c0e64ec5a}{lib\_div}}(op1, op2));}
+\DoxyCodeLine{203             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'\%'}) \{}
+\DoxyCodeLine{204                 \textcolor{keywordtype}{double} op2 = result\_stack.back();}
+\DoxyCodeLine{205                 result\_stack.pop\_back();}
+\DoxyCodeLine{206                 \textcolor{keywordtype}{double} op1 = result\_stack.back();}
+\DoxyCodeLine{207                 result\_stack.pop\_back();}
+\DoxyCodeLine{208                 result\_stack.push\_back(\mbox{\hyperlink{mathlib_8cpp_a17ed5997998539a18469f88e13927b57}{lib\_mod}}(op1, op2));}
+\DoxyCodeLine{209             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'\string^'}) \{}
+\DoxyCodeLine{210                 \textcolor{keywordtype}{double} op2 = result\_stack.back();}
+\DoxyCodeLine{211                 result\_stack.pop\_back();}
+\DoxyCodeLine{212                 \textcolor{keywordtype}{double} op1 = result\_stack.back();}
+\DoxyCodeLine{213                 result\_stack.pop\_back();}
+\DoxyCodeLine{214                 result\_stack.push\_back(\mbox{\hyperlink{mathlib_8cpp_a52f72a2ac790b2cd33ac54818bf25e40}{lib\_pow}}(op1, op2));}
+\DoxyCodeLine{215             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'v'}) \{}
+\DoxyCodeLine{216                 \textcolor{keywordtype}{double} op2 = result\_stack.back();}
+\DoxyCodeLine{217                 result\_stack.pop\_back();}
+\DoxyCodeLine{218                 \textcolor{keywordtype}{double} op1 = result\_stack.back();}
+\DoxyCodeLine{219                 result\_stack.pop\_back();}
+\DoxyCodeLine{220                 result\_stack.push\_back(\mbox{\hyperlink{mathlib_8cpp_aed5b2ba290d8ddd23ea66a43a774f801}{lib\_root}}(op2, op1));}
+\DoxyCodeLine{221             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'!'}) \{}
+\DoxyCodeLine{222                 \textcolor{keywordtype}{double} op2 = result\_stack.back();}
+\DoxyCodeLine{223                 \textcolor{keywordflow}{if} (op2 < 0) \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Negative Fact!"{}});                    \textcolor{comment}{// Ošetření chybového vstupu typu "{}-\/2!"{}}}
+\DoxyCodeLine{224                 \textcolor{keywordflow}{if} (op2 > FACTORIAL\_MAX) \textcolor{keywordflow}{throw} std::overflow\_error(ERROR\_OUT\_OF\_RANGE);     \textcolor{comment}{// Zamezení přetečení datového typu}}
+\DoxyCodeLine{225                 result\_stack.pop\_back();}
+\DoxyCodeLine{226                 result\_stack.push\_back(\mbox{\hyperlink{mathlib_8cpp_a313c1d5cbb27e6961bc2f718982eb738}{lib\_fact}}(op2));}
+\DoxyCodeLine{227             \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{228             \{}
+\DoxyCodeLine{229                 \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_OTHER);}
+\DoxyCodeLine{230             \}}
+\DoxyCodeLine{231         \}}
+\DoxyCodeLine{232     \}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238     \textcolor{comment}{// Získání výsledku z vrcholu zásobníku}}
+\DoxyCodeLine{239     \textcolor{keywordtype}{double} result = result\_stack.back();}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241     \textcolor{comment}{// Nutný flag pro správné zpracování výsledku v exponenciální notaci končícího nulou}}
+\DoxyCodeLine{242     \textcolor{keywordtype}{bool} scientific = \textcolor{keyword}{false};}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244     std::stringstream stream;}
+\DoxyCodeLine{245     std::string formattedResult;}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     \textcolor{comment}{// Zpracování výsledku do formátu pro výpis, založeno velikosti displeje kalkulačky}}
+\DoxyCodeLine{248     \textcolor{keywordflow}{if} (std::abs(result) > 999999999999.0 || (std::abs(result) > 0.0 \&\& std::abs(result) < 0.0001))}
+\DoxyCodeLine{249     \{}
+\DoxyCodeLine{250         stream << std::scientific << std::setprecision(5) << result;}
+\DoxyCodeLine{251         scientific = \textcolor{keyword}{true};}
+\DoxyCodeLine{252     \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{253     \{}
+\DoxyCodeLine{254         stream << std::fixed << std::setprecision(7) << result;}
+\DoxyCodeLine{255     \}}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257     formattedResult = stream.str();}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259     \textcolor{keywordflow}{if} (formattedResult.length() > 12)}
+\DoxyCodeLine{260     \{}
+\DoxyCodeLine{261         formattedResult = formattedResult.substr(0, 12);}
+\DoxyCodeLine{262     \}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264     \textcolor{comment}{// Odstranění nul na konci}}
+\DoxyCodeLine{265     \textcolor{keywordflow}{while} (formattedResult.back() == \textcolor{charliteral}{'0'})}
+\DoxyCodeLine{266     \{}
+\DoxyCodeLine{267         \textcolor{keywordflow}{if}(scientific) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{268         formattedResult.pop\_back();}
+\DoxyCodeLine{269     \}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271     \textcolor{comment}{// Při celočíselném výsledku odstranění desetinné tečky}}
+\DoxyCodeLine{272     \textcolor{keywordflow}{if} (formattedResult.back() == \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{273     \{}
+\DoxyCodeLine{274         formattedResult.pop\_back();}
+\DoxyCodeLine{275     \}}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277     \textcolor{comment}{// Návrat výsledku ve správném formátu}}
+\DoxyCodeLine{278     \textcolor{keywordflow}{return} formattedResult;}
+\DoxyCodeLine{279 \}}
+
+\end{DoxyCode}

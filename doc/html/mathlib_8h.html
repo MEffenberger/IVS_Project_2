@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rogalo Calculator: Dokumentace souboru mathlib.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rogalo Calculator
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">IVS project 2, calculator development</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Hledat" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generováno programem Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('mathlib_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definice maker</a> &#124;
+<a href="#func-members">Funkce</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentace souboru mathlib.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Hlavičkový soubor pro matematickou knihovnu kalkulačky.  
+<a href="#details">...</a></p>
+<div class="textblock"><code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;cfloat&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graf závislostí na vkládaných souborech pro mathlib.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="mathlib_8h__incl.png" border="0" usemap="#amathlib_8h" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Následující graf ukazuje, které soubory přímo nebo nepřímo vkládají tento soubor:</div>
+<div class="dyncontent">
+<div class="center"><img src="mathlib_8h__dep__incl.png" border="0" usemap="#amathlib_8hdep" alt=""/></div>
+</div>
+</div>
+<p><a href="mathlib_8h_source.html">Zobrazit zdrojový text tohoto souboru.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definice maker</h2></td></tr>
+<tr class="memitem:a5f4c7f12161fd2433f84be7a1e7b51b4"><td class="memItemLeft" align="right" valign="top"><a id="a5f4c7f12161fd2433f84be7a1e7b51b4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_DIV</b>&#160;&#160;&#160;&quot;Division by zero!&quot;</td></tr>
+<tr class="separator:a5f4c7f12161fd2433f84be7a1e7b51b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6d06e8e0444954de0f75237572abf5a"><td class="memItemLeft" align="right" valign="top"><a id="ae6d06e8e0444954de0f75237572abf5a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_OTHER</b>&#160;&#160;&#160;&quot;Wrong input!&quot;</td></tr>
+<tr class="separator:ae6d06e8e0444954de0f75237572abf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7102651296c0417a05f0117c66c18de5"><td class="memItemLeft" align="right" valign="top"><a id="a7102651296c0417a05f0117c66c18de5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ERROR_OUT_OF_RANGE</b>&#160;&#160;&#160;&quot;Out of range!&quot;</td></tr>
+<tr class="separator:a7102651296c0417a05f0117c66c18de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af23504f59046c1fd61d89290e3b6e2a0"><td class="memItemLeft" align="right" valign="top"><a id="af23504f59046c1fd61d89290e3b6e2a0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FACTORIAL_MAX</b>&#160;&#160;&#160;170</td></tr>
+<tr class="separator:af23504f59046c1fd61d89290e3b6e2a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkce</h2></td></tr>
+<tr class="memitem:af6413b1a47a3e17fb4562b114cace645"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mathlib_8h.html#af6413b1a47a3e17fb4562b114cace645">lib_add</a> (double num1, double num2)</td></tr>
+<tr class="memdesc:af6413b1a47a3e17fb4562b114cace645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkce, která sečte dva operandy.  <a href="mathlib_8h.html#af6413b1a47a3e17fb4562b114cace645">...</a><br /></td></tr>
+<tr class="separator:af6413b1a47a3e17fb4562b114cace645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada04beac0cfbb842690d63a3af33dce3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mathlib_8h.html#ada04beac0cfbb842690d63a3af33dce3">lib_sub</a> (double num1, double num2)</td></tr>
+<tr class="memdesc:ada04beac0cfbb842690d63a3af33dce3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkce, která odečte dva operandy.  <a href="mathlib_8h.html#ada04beac0cfbb842690d63a3af33dce3">...</a><br /></td></tr>
+<tr class="separator:ada04beac0cfbb842690d63a3af33dce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f3050f4fd1cfd66dc119f6b4ef7d3a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mathlib_8h.html#a81f3050f4fd1cfd66dc119f6b4ef7d3a">lib_mul</a> (double num1, double num2)</td></tr>
+<tr class="memdesc:a81f3050f4fd1cfd66dc119f6b4ef7d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkce, která vynásobí dva operandy.  <a href="mathlib_8h.html#a81f3050f4fd1cfd66dc119f6b4ef7d3a">...</a><br /></td></tr>
+<tr class="separator:a81f3050f4fd1cfd66dc119f6b4ef7d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d583ead7f80f6c8afef9f5c0e64ec5a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mathlib_8h.html#a1d583ead7f80f6c8afef9f5c0e64ec5a">lib_div</a> (double num1, double num2)</td></tr>
+<tr class="memdesc:a1d583ead7f80f6c8afef9f5c0e64ec5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkce, která vydělí dva operandy.  <a href="mathlib_8h.html#a1d583ead7f80f6c8afef9f5c0e64ec5a">...</a><br /></td></tr>
+<tr class="separator:a1d583ead7f80f6c8afef9f5c0e64ec5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313c1d5cbb27e6961bc2f718982eb738"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mathlib_8h.html#a313c1d5cbb27e6961bc2f718982eb738">lib_fact</a> (double num)</td></tr>
+<tr class="memdesc:a313c1d5cbb27e6961bc2f718982eb738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkce, která vypočítá faktoriál čísla.  <a href="mathlib_8h.html#a313c1d5cbb27e6961bc2f718982eb738">...</a><br /></td></tr>
+<tr class="separator:a313c1d5cbb27e6961bc2f718982eb738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f72a2ac790b2cd33ac54818bf25e40"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mathlib_8h.html#a52f72a2ac790b2cd33ac54818bf25e40">lib_pow</a> (double num, double exp)</td></tr>
+<tr class="memdesc:a52f72a2ac790b2cd33ac54818bf25e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkce, která umocní první operand na druhý  <a href="mathlib_8h.html#a52f72a2ac790b2cd33ac54818bf25e40">...</a><br /></td></tr>
+<tr class="separator:a52f72a2ac790b2cd33ac54818bf25e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed5b2ba290d8ddd23ea66a43a774f801"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mathlib_8h.html#aed5b2ba290d8ddd23ea66a43a774f801">lib_root</a> (double num, double root)</td></tr>
+<tr class="memdesc:aed5b2ba290d8ddd23ea66a43a774f801"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkce, která odmocní první operand druhým.  <a href="mathlib_8h.html#aed5b2ba290d8ddd23ea66a43a774f801">...</a><br /></td></tr>
+<tr class="separator:aed5b2ba290d8ddd23ea66a43a774f801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17ed5997998539a18469f88e13927b57"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mathlib_8h.html#a17ed5997998539a18469f88e13927b57">lib_mod</a> (double num1, double num2)</td></tr>
+<tr class="memdesc:a17ed5997998539a18469f88e13927b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkce, která vypočítá modulo čísla.  <a href="mathlib_8h.html#a17ed5997998539a18469f88e13927b57">...</a><br /></td></tr>
+<tr class="separator:a17ed5997998539a18469f88e13927b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailní popis</h2>
+<div class="textblock"><p>Hlavičkový soubor pro matematickou knihovnu kalkulačky. </p>
+<dl class="section author"><dt>Autor</dt><dd>Rogalo </dd></dl>
+
+<p class="definition">Definice v souboru <a class="el" href="mathlib_8h_source.html">mathlib.h</a>.</p>
+</div><h2 class="groupheader">Dokumentace funkcí</h2>
+<a id="af6413b1a47a3e17fb4562b114cace645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6413b1a47a3e17fb4562b114cace645">&#9670;&nbsp;</a></span>lib_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib_add </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkce, která sečte dva operandy. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num1</td><td>První operand </td></tr>
+    <tr><td class="paramname">num2</td><td>Druhý operand </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>Součet num1 a num2 </dd></dl>
+
+<p class="definition">Definice je uvedena na řádku <a class="el" href="mathlib_8cpp_source.html#l00024">24</a> v souboru <a class="el" href="mathlib_8cpp_source.html">mathlib.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                          {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">double</span> result = num1 + num2;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1d583ead7f80f6c8afef9f5c0e64ec5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d583ead7f80f6c8afef9f5c0e64ec5a">&#9670;&nbsp;</a></span>lib_div()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib_div </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkce, která vydělí dva operandy. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num1</td><td>První operand </td></tr>
+    <tr><td class="paramname">num2</td><td>Druhý operand </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>Podíl num1 a num2 </dd></dl>
+
+<p class="definition">Definice je uvedena na řádku <a class="el" href="mathlib_8cpp_source.html#l00067">67</a> v souboru <a class="el" href="mathlib_8cpp_source.html">mathlib.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                          {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (num2 == 0) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(ERROR_DIV);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">double</span> result = num1 / num2;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a313c1d5cbb27e6961bc2f718982eb738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a313c1d5cbb27e6961bc2f718982eb738">&#9670;&nbsp;</a></span>lib_fact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib_fact </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkce, která vypočítá faktoriál čísla. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>Číslo, kterému se vypočítá faktoriál </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>Faktoriál num </dd></dl>
+
+<p class="definition">Definice je uvedena na řádku <a class="el" href="mathlib_8cpp_source.html#l00127">127</a> v souboru <a class="el" href="mathlib_8cpp_source.html">mathlib.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                             {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span> (num &lt; 0) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(ERROR_OTHER);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// maximal supported number should be determined based on the GUI</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (num == 0) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> num * <a class="code" href="mathlib_8cpp.html#a313c1d5cbb27e6961bc2f718982eb738">lib_fact</a>(num - 1);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="ttc" id="amathlib_8cpp_html_a313c1d5cbb27e6961bc2f718982eb738"><div class="ttname"><a href="mathlib_8cpp.html#a313c1d5cbb27e6961bc2f718982eb738">lib_fact</a></div><div class="ttdeci">double lib_fact(double num)</div><div class="ttdoc">Funkce, která vypočítá faktoriál čísla.</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8cpp_source.html#l00127">mathlib.cpp:127</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a17ed5997998539a18469f88e13927b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ed5997998539a18469f88e13927b57">&#9670;&nbsp;</a></span>lib_mod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib_mod </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkce, která vypočítá modulo čísla. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num1</td><td>První operand </td></tr>
+    <tr><td class="paramname">num2</td><td>Druhý operand </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>Modulo num1 a num2 </dd></dl>
+
+<p class="definition">Definice je uvedena na řádku <a class="el" href="mathlib_8cpp_source.html#l00147">147</a> v souboru <a class="el" href="mathlib_8cpp_source.html">mathlib.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                          {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">if</span> (num2 == 0) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(ERROR_DIV);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">return</span> fmod(num1, num2);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a81f3050f4fd1cfd66dc119f6b4ef7d3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81f3050f4fd1cfd66dc119f6b4ef7d3a">&#9670;&nbsp;</a></span>lib_mul()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib_mul </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkce, která vynásobí dva operandy. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num1</td><td>První operand </td></tr>
+    <tr><td class="paramname">num2</td><td>Druhý operand </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>Součin num1 a num2 </dd></dl>
+
+<p class="definition">Definice je uvedena na řádku <a class="el" href="mathlib_8cpp_source.html#l00053">53</a> v souboru <a class="el" href="mathlib_8cpp_source.html">mathlib.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                          {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">double</span> result = num1 * num2;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a52f72a2ac790b2cd33ac54818bf25e40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52f72a2ac790b2cd33ac54818bf25e40">&#9670;&nbsp;</a></span>lib_pow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib_pow </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>exp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkce, která umocní první operand na druhý </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>První operand = mocněnec </td></tr>
+    <tr><td class="paramname">exp</td><td>Druhý operand = mocnitel </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>První operand umocněný na druhý </dd></dl>
+
+<p class="definition">Definice je uvedena na řádku <a class="el" href="mathlib_8cpp_source.html#l00084">84</a> v souboru <a class="el" href="mathlib_8cpp_source.html">mathlib.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (<span class="keywordtype">int</span>(exp) != exp) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(ERROR_OTHER);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">double</span> result = pow(num, exp);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed5b2ba290d8ddd23ea66a43a774f801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed5b2ba290d8ddd23ea66a43a774f801">&#9670;&nbsp;</a></span>lib_root()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib_root </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>root</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkce, která odmocní první operand druhým. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>Odmocňované číslo </td></tr>
+    <tr><td class="paramname">root</td><td>Odmocnitel </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>Obecná odmocnina </dd></dl>
+
+<p class="definition">Definice je uvedena na řádku <a class="el" href="mathlib_8cpp_source.html#l00101">101</a> v souboru <a class="el" href="mathlib_8cpp_source.html">mathlib.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                          {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span> (root == 0) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(ERROR_OTHER);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> (num &lt; 0 &amp;&amp; std::fmod(root, 2) == 0) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(ERROR_OTHER);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span>(num &lt; 0 &amp;&amp; std::fmod(root, 2) != 0) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">double</span> result = -std::pow(-num, 1.0/root);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">double</span> result = std::pow(num, 1.0/root);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ada04beac0cfbb842690d63a3af33dce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada04beac0cfbb842690d63a3af33dce3">&#9670;&nbsp;</a></span>lib_sub()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib_sub </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>num2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkce, která odečte dva operandy. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num1</td><td>První operand </td></tr>
+    <tr><td class="paramname">num2</td><td>Druhý operand </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Návratová hodnota</dt><dd>Rozdíl num1 a num2 </dd></dl>
+
+<p class="definition">Definice je uvedena na řádku <a class="el" href="mathlib_8cpp_source.html#l00038">38</a> v souboru <a class="el" href="mathlib_8cpp_source.html">mathlib.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                          {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">double</span> result = num1 - num2;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="mathlib_8h.html">mathlib.h</a></li>
+    <li class="footer">Generováno programem <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

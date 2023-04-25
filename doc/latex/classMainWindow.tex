@@ -1,0 +1,234 @@
+\hypertarget{classMainWindow}{}\doxysection{Dokumentace třídy Main\+Window}
+\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+Třída \mbox{\hyperlink{classMainWindow}{Main\+Window}} reprezentující okno kalkulačky.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+
+
+Diagram dědičnosti pro třídu Main\+Window
+% FIG 0
+
+
+Diagram tříd pro Main\+Window\+:
+% FIG 1
+\doxysubsection*{Veřejné metody}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainWindow_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Konstruktor třídy \mbox{\hyperlink{classMainWindow}{Main\+Window}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}\label{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\mbox{\hyperlink{classMainWindow_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destruktorová funkce pro třídu \mbox{\hyperlink{classMainWindow}{Main\+Window}} Funkce odstraňuje promměnnou ui a uvolňuje tak pamět alokovanou pro objekt Ui\+::\+Main\+Window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Chráněné metody}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_a55ae3e0d4303334ccabae0a5050cfd88}{key\+Press\+Event}} (QKey\+Event $\ast$event) override
+\begin{DoxyCompactList}\small\item\em Funkce pro zpracování vstupu z klávesnice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailní popis}
+Třída \mbox{\hyperlink{classMainWindow}{Main\+Window}} reprezentující okno kalkulačky. 
+
+Definice je uvedena na řádku 28 v souboru mainwindow.\+h.
+
+
+
+\doxysubsection{Dokumentace konstruktoru a destruktoru}
+\mbox{\Hypertarget{classMainWindow_a996c5a2b6f77944776856f08ec30858d}\label{classMainWindow_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Konstruktor třídy \mbox{\hyperlink{classMainWindow}{Main\+Window}}. 
+
+Konstruktorová funkce pro třídu \mbox{\hyperlink{classMainWindow}{Main\+Window}} Funkce inicializuje objekt \mbox{\hyperlink{classMainWindow}{Main\+Window}} a nastavuje jeho uživatelské rozhraní vytvořením instance Ui\+::\+Main\+Window.
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & Ukazatel na rodičovské okno\\
+\hline
+{\em parent} & Ukazatel na rodičovský widget \\
+\hline
+\end{DoxyParams}
+Propojení tlačítek s funkcí digit\+\_\+pressed()
+
+Skrytí nápovědového okna při spuštění
+
+Propojení tlačítka pro zobrazení a skrytí nápovědy (otazník)
+
+Zobrazení nápovědy
+
+Propojení tlačítka pro skrytí nápovědy (křížek)
+
+Definice je uvedena na řádku 34 v souboru mainwindow.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35     : QMainWindow(parent)}
+\DoxyCodeLine{36     , ui(\textcolor{keyword}{new} Ui::MainWindow)}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38    ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40    ui-\/>button\_equal-\/>setFocus();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{43     connect(ui-\/>button\_0, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{44     connect(ui-\/>button\_1, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{45     connect(ui-\/>button\_2, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{46     connect(ui-\/>button\_3, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{47     connect(ui-\/>button\_4, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{48     connect(ui-\/>button\_5, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{49     connect(ui-\/>button\_6, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{50     connect(ui-\/>button\_7, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{51     connect(ui-\/>button\_8, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{52     connect(ui-\/>button\_9, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{53     connect(ui-\/>button\_point, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{54     connect(ui-\/>button\_plus, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{55     connect(ui-\/>button\_minus, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{56     connect(ui-\/>button\_mul, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{57     connect(ui-\/>button\_div, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{58     connect(ui-\/>button\_lpar, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{59     connect(ui-\/>button\_rpar, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{60     connect(ui-\/>button\_mod, SIGNAL(released()),\textcolor{keyword}{this}, SLOT(digit\_pressed()));}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63     ui-\/>label\_help-\/>setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{64     ui-\/>button\_closeHelp-\/>setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67     QObject::connect(ui-\/>button\_help, \&QPushButton::clicked, \textcolor{keyword}{this}, [=]() \{}
+\DoxyCodeLine{68             \textcolor{comment}{// Skrytí nápovědy}}
+\DoxyCodeLine{69             if (ui-\/>label\_help-\/>isVisible()) \{}
+\DoxyCodeLine{70                 ui-\/>button\_help-\/>clearFocus();}
+\DoxyCodeLine{71                 ui-\/>button\_closeHelp-\/>clearFocus();}
+\DoxyCodeLine{72                 ui-\/>label\_help-\/>setVisible(false);}
+\DoxyCodeLine{73                 ui-\/>button\_closeHelp-\/>setVisible(false);}
+\DoxyCodeLine{74             \}}
+\DoxyCodeLine{76             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{77                 ui-\/>button\_help-\/>clearFocus();}
+\DoxyCodeLine{78                 ui-\/>button\_closeHelp-\/>clearFocus();}
+\DoxyCodeLine{79                 ui-\/>label\_help-\/>setVisible(true);}
+\DoxyCodeLine{80                 ui-\/>button\_closeHelp-\/>setVisible(true);}
+\DoxyCodeLine{81             \}}
+\DoxyCodeLine{82         \});}
+\DoxyCodeLine{84     QObject::connect(ui-\/>button\_closeHelp, \&QPushButton::clicked, \textcolor{keyword}{this}, [=]() \{}
+\DoxyCodeLine{85         ui-\/>button\_closeHelp-\/>clearFocus();}
+\DoxyCodeLine{86         ui-\/>button\_help-\/>clearFocus();}
+\DoxyCodeLine{87         ui-\/>label\_help-\/>setVisible(false);}
+\DoxyCodeLine{88         ui-\/>button\_closeHelp-\/>setVisible(false);}
+\DoxyCodeLine{89         \});}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Dokumentace k metodám}
+\mbox{\Hypertarget{classMainWindow_a55ae3e0d4303334ccabae0a5050cfd88}\label{classMainWindow_a55ae3e0d4303334ccabae0a5050cfd88}} 
+\index{MainWindow@{MainWindow}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Main\+Window\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Funkce pro zpracování vstupu z klávesnice. 
+
+Funkce pro zadání výrazu pomocí klávesnice Funkce reaguje na stisk klávesy (číslic, operátorů, ...) zavoláním funkce type\+In.
+
+
+\begin{DoxyParams}{Parametry}
+{\em event} & Event klávesnice\\
+\hline
+{\em event} & Ukazatel na event stisku klávesy \\
+\hline
+\end{DoxyParams}
+
+
+Definice je uvedena na řádku 119 v souboru mainwindow.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{120 \{}
+\DoxyCodeLine{121     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_0) \{}
+\DoxyCodeLine{122         typeIn(\textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_1) \{}
+\DoxyCodeLine{125         typeIn(\textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_2) \{}
+\DoxyCodeLine{128         typeIn(\textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{129     \}}
+\DoxyCodeLine{130     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_3) \{}
+\DoxyCodeLine{131         typeIn(\textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{132     \}}
+\DoxyCodeLine{133     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_4) \{}
+\DoxyCodeLine{134         typeIn(\textcolor{stringliteral}{"{}4"{}});}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_5) \{}
+\DoxyCodeLine{137         typeIn(\textcolor{stringliteral}{"{}5"{}});}
+\DoxyCodeLine{138     \}}
+\DoxyCodeLine{139     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_6) \{}
+\DoxyCodeLine{140         typeIn(\textcolor{stringliteral}{"{}6"{}});}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_7) \{}
+\DoxyCodeLine{143         typeIn(\textcolor{stringliteral}{"{}7"{}});}
+\DoxyCodeLine{144     \}}
+\DoxyCodeLine{145     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_8) \{}
+\DoxyCodeLine{146         typeIn(\textcolor{stringliteral}{"{}8"{}});}
+\DoxyCodeLine{147     \}}
+\DoxyCodeLine{148     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_9) \{}
+\DoxyCodeLine{149         typeIn(\textcolor{stringliteral}{"{}9"{}});}
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Plus) \{}
+\DoxyCodeLine{152         typeIn(\textcolor{stringliteral}{"{}+"{}});}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Minus) \{}
+\DoxyCodeLine{155         typeIn(\textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{156     \}}
+\DoxyCodeLine{157     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Asterisk) \{}
+\DoxyCodeLine{158         typeIn(\textcolor{stringliteral}{"{}×"{}});}
+\DoxyCodeLine{159     \}}
+\DoxyCodeLine{160     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Slash) \{}
+\DoxyCodeLine{161         typeIn(\textcolor{stringliteral}{"{}÷"{}});}
+\DoxyCodeLine{162     \}}
+\DoxyCodeLine{163     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_AsciiCircum) \{}
+\DoxyCodeLine{164         typeIn(\textcolor{stringliteral}{"{}\string^"{}});}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Exclam) \{}
+\DoxyCodeLine{167         typeIn(\textcolor{stringliteral}{"{}!"{}});}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_ParenLeft) \{}
+\DoxyCodeLine{170         typeIn(\textcolor{stringliteral}{"{}("{}});}
+\DoxyCodeLine{171     \}}
+\DoxyCodeLine{172     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_ParenRight) \{}
+\DoxyCodeLine{173         typeIn(\textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{174     \}}
+\DoxyCodeLine{175     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Comma || event-\/>key() == Qt::Key\_Period) \{}
+\DoxyCodeLine{176         typeIn(\textcolor{stringliteral}{"{}."{}});}
+\DoxyCodeLine{177     \}}
+\DoxyCodeLine{178     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Backspace) \{}
+\DoxyCodeLine{179         on\_button\_del\_released();}
+\DoxyCodeLine{180     \}}
+\DoxyCodeLine{181     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Delete || event-\/>key() == Qt::Key\_C) \{}
+\DoxyCodeLine{182         on\_button\_clear\_released();}
+\DoxyCodeLine{183     \}}
+\DoxyCodeLine{184     \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Equal || event-\/>key() == Qt::Key\_Return || event-\/>key() == Qt::Key\_Enter) \{}
+\DoxyCodeLine{185         on\_button\_equal\_released();}
+\DoxyCodeLine{186     \}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \}}
+
+\end{DoxyCode}
+
+
+Dokumentace pro tuto třídu byla generována z následujících souborů\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

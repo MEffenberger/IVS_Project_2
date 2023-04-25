@@ -1,0 +1,63 @@
+\hypertarget{main_8cpp}{}\doxysection{Dokumentace souboru main.\+cpp}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Hlavní funkce pro spuštění uživatelského rozhraní kalkulačky.  
+
+
+{\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QApplication$>$}\newline
+Graf závislostí na vkládaných souborech pro main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Funkce}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Hlavní funkce pro spuštění kalkulačky Vytváří nové okno \mbox{\hyperlink{classMainWindow}{Main\+Window}} a nastavuje jeho titulek. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailní popis}
+Hlavní funkce pro spuštění uživatelského rozhraní kalkulačky. 
+
+\begin{DoxyAuthor}{Autor}
+Rogalo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Dokumentace funkcí}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Hlavní funkce pro spuštění kalkulačky Vytváří nové okno \mbox{\hyperlink{classMainWindow}{Main\+Window}} a nastavuje jeho titulek. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em argc} & počet argumentů \\
+\hline
+{\em argv} & pole argumentů \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+Návratová hodnota z funkce QApplication\+::exec() 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 25 v souboru main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     QApplication a(argc, argv);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{classMainWindow}{MainWindow}} w;}
+\DoxyCodeLine{30     w.setWindowTitle(\textcolor{stringliteral}{"{}Calculator"{}});}
+\DoxyCodeLine{31     w.show();}
+\DoxyCodeLine{32     \textcolor{keywordflow}{return} a.exec();}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}

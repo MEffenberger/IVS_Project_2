@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rogalo Calculator: Zdrojový soubor mathlib.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rogalo Calculator
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">IVS project 2, calculator development</div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Hledat" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generováno programem Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('mathlib_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">mathlib.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mathlib_8h.html">Zobrazit dokumentaci tohoto souboru.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/********************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *  Název projektu: Kalkulačka</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Soubor: mathlib.h</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Datum: 23.4.2023</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  Autor: Rogalo</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  Popis: Hlavickovy soubor pro matematickou knihovnu kalkulacky</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*********************************************************/</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef MATHLIB_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define MATHLIB_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// Knihovny pro matematické funkce a výjimky</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;cfloat&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Makra a konstanty</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define ERROR_DIV &quot;Division by zero!&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define ERROR_OTHER &quot;Wrong input!&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define ERROR_OUT_OF_RANGE &quot;Out of range!&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define FACTORIAL_MAX 170</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Prototypy funkcí</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">double</span> <a class="code" href="mathlib_8h.html#af6413b1a47a3e17fb4562b114cace645">lib_add</a> (<span class="keywordtype">double</span> num1, <span class="keywordtype">double</span> num2);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">double</span> <a class="code" href="mathlib_8h.html#ada04beac0cfbb842690d63a3af33dce3">lib_sub</a> (<span class="keywordtype">double</span> num1, <span class="keywordtype">double</span> num2);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">double</span> <a class="code" href="mathlib_8h.html#a81f3050f4fd1cfd66dc119f6b4ef7d3a">lib_mul</a> (<span class="keywordtype">double</span> num1, <span class="keywordtype">double</span> num2);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">double</span> <a class="code" href="mathlib_8h.html#a1d583ead7f80f6c8afef9f5c0e64ec5a">lib_div</a> (<span class="keywordtype">double</span> num1, <span class="keywordtype">double</span> num2);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">double</span> <a class="code" href="mathlib_8h.html#a313c1d5cbb27e6961bc2f718982eb738">lib_fact</a> (<span class="keywordtype">double</span> num);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">double</span> <a class="code" href="mathlib_8h.html#a52f72a2ac790b2cd33ac54818bf25e40">lib_pow</a> (<span class="keywordtype">double</span> num, <span class="keywordtype">double</span> exp);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">double</span> <a class="code" href="mathlib_8h.html#aed5b2ba290d8ddd23ea66a43a774f801">lib_root</a> (<span class="keywordtype">double</span> num, <span class="keywordtype">double</span> root);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">double</span> <a class="code" href="mathlib_8h.html#a17ed5997998539a18469f88e13927b57">lib_mod</a> (<span class="keywordtype">double</span> num1, <span class="keywordtype">double</span> num2);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="ttc" id="amathlib_8h_html_a17ed5997998539a18469f88e13927b57"><div class="ttname"><a href="mathlib_8h.html#a17ed5997998539a18469f88e13927b57">lib_mod</a></div><div class="ttdeci">double lib_mod(double num1, double num2)</div><div class="ttdoc">Funkce, která vypočítá modulo čísla.</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8cpp_source.html#l00147">mathlib.cpp:147</a></div></div>
+<div class="ttc" id="amathlib_8h_html_a1d583ead7f80f6c8afef9f5c0e64ec5a"><div class="ttname"><a href="mathlib_8h.html#a1d583ead7f80f6c8afef9f5c0e64ec5a">lib_div</a></div><div class="ttdeci">double lib_div(double num1, double num2)</div><div class="ttdoc">Funkce, která vydělí dva operandy.</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8cpp_source.html#l00067">mathlib.cpp:67</a></div></div>
+<div class="ttc" id="amathlib_8h_html_a313c1d5cbb27e6961bc2f718982eb738"><div class="ttname"><a href="mathlib_8h.html#a313c1d5cbb27e6961bc2f718982eb738">lib_fact</a></div><div class="ttdeci">double lib_fact(double num)</div><div class="ttdoc">Funkce, která vypočítá faktoriál čísla.</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8cpp_source.html#l00127">mathlib.cpp:127</a></div></div>
+<div class="ttc" id="amathlib_8h_html_a52f72a2ac790b2cd33ac54818bf25e40"><div class="ttname"><a href="mathlib_8h.html#a52f72a2ac790b2cd33ac54818bf25e40">lib_pow</a></div><div class="ttdeci">double lib_pow(double num, double exp)</div><div class="ttdoc">Funkce, která umocní první operand na druhý</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8cpp_source.html#l00084">mathlib.cpp:84</a></div></div>
+<div class="ttc" id="amathlib_8h_html_a81f3050f4fd1cfd66dc119f6b4ef7d3a"><div class="ttname"><a href="mathlib_8h.html#a81f3050f4fd1cfd66dc119f6b4ef7d3a">lib_mul</a></div><div class="ttdeci">double lib_mul(double num1, double num2)</div><div class="ttdoc">Funkce, která vynásobí dva operandy.</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8cpp_source.html#l00053">mathlib.cpp:53</a></div></div>
+<div class="ttc" id="amathlib_8h_html_ada04beac0cfbb842690d63a3af33dce3"><div class="ttname"><a href="mathlib_8h.html#ada04beac0cfbb842690d63a3af33dce3">lib_sub</a></div><div class="ttdeci">double lib_sub(double num1, double num2)</div><div class="ttdoc">Funkce, která odečte dva operandy.</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8cpp_source.html#l00038">mathlib.cpp:38</a></div></div>
+<div class="ttc" id="amathlib_8h_html_aed5b2ba290d8ddd23ea66a43a774f801"><div class="ttname"><a href="mathlib_8h.html#aed5b2ba290d8ddd23ea66a43a774f801">lib_root</a></div><div class="ttdeci">double lib_root(double num, double root)</div><div class="ttdoc">Funkce, která odmocní první operand druhým.</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8cpp_source.html#l00101">mathlib.cpp:101</a></div></div>
+<div class="ttc" id="amathlib_8h_html_af6413b1a47a3e17fb4562b114cace645"><div class="ttname"><a href="mathlib_8h.html#af6413b1a47a3e17fb4562b114cace645">lib_add</a></div><div class="ttdeci">double lib_add(double num1, double num2)</div><div class="ttdoc">Funkce, která sečte dva operandy.</div><div class="ttdef"><b>Definition:</b> <a href="mathlib_8cpp_source.html#l00024">mathlib.cpp:24</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="mathlib_8h.html">mathlib.h</a></li>
+    <li class="footer">Generováno programem <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

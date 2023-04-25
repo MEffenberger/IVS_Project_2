@@ -1,0 +1,79 @@
+\hypertarget{stddev_8cpp}{}\doxysection{Dokumentace souboru stddev.\+cpp}
+\label{stddev_8cpp}\index{stddev.cpp@{stddev.cpp}}
+
+
+výpočet směrodatné odchylky  
+
+
+{\ttfamily \#include \char`\"{}mathlib.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Graf závislostí na vkládaných souborech pro stddev.\+cpp\+:
+% FIG 0
+\doxysubsection*{Funkce}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{stddev_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Funkce pro výpočet směrodatné odchylky. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailní popis}
+výpočet směrodatné odchylky 
+
+\begin{DoxyAuthor}{Autor}
+xhejni00 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Dokumentace funkcí}
+\mbox{\Hypertarget{stddev_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{stddev_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{stddev.cpp@{stddev.cpp}!main@{main}}
+\index{main@{main}!stddev.cpp@{stddev.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Funkce pro výpočet směrodatné odchylky. 
+
+\begin{DoxyReturn}{Návratová hodnota}
+0 pokud vše proběhlo úspěšně, -\/1 pokud nebylo zadáno žádné číslo 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 22 v souboru stddev.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22            \{}
+\DoxyCodeLine{23     \textcolor{comment}{//dekarace potřebných proměnnných}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{double} number;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{double} sum = 0;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{double} sum\_sq = 0;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{double} SDeviation;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{double} var = 0;}
+\DoxyCodeLine{29     \textcolor{keywordtype}{double} count = 0;}
+\DoxyCodeLine{30     }
+\DoxyCodeLine{31     \textcolor{comment}{//načítání čísel ze standardního vstupu}}
+\DoxyCodeLine{32     \textcolor{keywordflow}{while}(fscanf(stdin, \textcolor{stringliteral}{"{}\%lf"{}}, \&number) == 1)\{}
+\DoxyCodeLine{33         sum = \mbox{\hyperlink{mathlib_8cpp_af6413b1a47a3e17fb4562b114cace645}{lib\_add}}(sum, number); \textcolor{comment}{//výpočet součtu čísel}}
+\DoxyCodeLine{34         sum\_sq = \mbox{\hyperlink{mathlib_8cpp_af6413b1a47a3e17fb4562b114cace645}{lib\_add}}(sum\_sq, \mbox{\hyperlink{mathlib_8cpp_a52f72a2ac790b2cd33ac54818bf25e40}{lib\_pow}}(number, 2)); \textcolor{comment}{//výpočet součtu druhých mocnin čísel}}
+\DoxyCodeLine{35         count = \mbox{\hyperlink{mathlib_8cpp_af6413b1a47a3e17fb4562b114cace645}{lib\_add}}(count, 1); \textcolor{comment}{//inkrementace čítače celkového počtu čísel}}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37     \textcolor{comment}{//chyba pokud není zadáno žádné číslo}}
+\DoxyCodeLine{38     \textcolor{keywordflow}{if}(count == 0)\{}
+\DoxyCodeLine{39         fprintf(stderr, \textcolor{stringliteral}{"{}Chyba, nezadano zadne cislo.\(\backslash\)n"{}});}
+\DoxyCodeLine{40         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42     }
+\DoxyCodeLine{43     \textcolor{keywordtype}{double} mean = \mbox{\hyperlink{mathlib_8cpp_a1d583ead7f80f6c8afef9f5c0e64ec5a}{lib\_div}}(sum, count); \textcolor{comment}{// výpočet průměru }}
+\DoxyCodeLine{44     var = \mbox{\hyperlink{mathlib_8cpp_ada04beac0cfbb842690d63a3af33dce3}{lib\_sub}}(sum\_sq, \mbox{\hyperlink{mathlib_8cpp_a81f3050f4fd1cfd66dc119f6b4ef7d3a}{lib\_mul}}(\mbox{\hyperlink{mathlib_8cpp_a52f72a2ac790b2cd33ac54818bf25e40}{lib\_pow}}(mean, 2),count)); \textcolor{comment}{//výpočet rozptylu}}
+\DoxyCodeLine{45     var = \mbox{\hyperlink{mathlib_8cpp_a1d583ead7f80f6c8afef9f5c0e64ec5a}{lib\_div}}(var, count); \textcolor{comment}{// vydělení rozptylu celkovým počtem čísel}}
+\DoxyCodeLine{46     SDeviation = \mbox{\hyperlink{mathlib_8cpp_aed5b2ba290d8ddd23ea66a43a774f801}{lib\_root}}(var, 2); \textcolor{comment}{//výpočet odmocniny z rozptylu }}
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48     \textcolor{comment}{//výpis standardní odchylky na standardní výstup}}
+\DoxyCodeLine{49     cout << SDeviation << endl;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{52 \}}
+
+\end{DoxyCode}

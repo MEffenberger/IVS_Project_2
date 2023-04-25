@@ -1,0 +1,358 @@
+\hypertarget{mathlib_8h}{}\doxysection{Dokumentace souboru mathlib.\+h}
+\label{mathlib_8h}\index{mathlib.h@{mathlib.h}}
+
+
+Hlavičkový soubor pro matematickou knihovnu kalkulačky.  
+
+
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cfloat$>$}\newline
+Graf závislostí na vkládaných souborech pro mathlib.\+h\+:
+% FIG 0
+Následující graf ukazuje, které soubory přímo nebo nepřímo vkládají tento soubor\+:
+% FIG 1
+\doxysubsection*{Definice maker}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{mathlib_8h_a5f4c7f12161fd2433f84be7a1e7b51b4}\label{mathlib_8h_a5f4c7f12161fd2433f84be7a1e7b51b4}} 
+\#define {\bfseries ERROR\+\_\+\+DIV}~\char`\"{}Division by zero!\char`\"{}
+\item 
+\mbox{\Hypertarget{mathlib_8h_ae6d06e8e0444954de0f75237572abf5a}\label{mathlib_8h_ae6d06e8e0444954de0f75237572abf5a}} 
+\#define {\bfseries ERROR\+\_\+\+OTHER}~\char`\"{}Wrong input!\char`\"{}
+\item 
+\mbox{\Hypertarget{mathlib_8h_a7102651296c0417a05f0117c66c18de5}\label{mathlib_8h_a7102651296c0417a05f0117c66c18de5}} 
+\#define {\bfseries ERROR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}~\char`\"{}Out of range!\char`\"{}
+\item 
+\mbox{\Hypertarget{mathlib_8h_af23504f59046c1fd61d89290e3b6e2a0}\label{mathlib_8h_af23504f59046c1fd61d89290e3b6e2a0}} 
+\#define {\bfseries FACTORIAL\+\_\+\+MAX}~170
+\end{DoxyCompactItemize}
+\doxysubsection*{Funkce}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{mathlib_8h_af6413b1a47a3e17fb4562b114cace645}{lib\+\_\+add}} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Funkce, která sečte dva operandy. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mathlib_8h_ada04beac0cfbb842690d63a3af33dce3}{lib\+\_\+sub}} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Funkce, která odečte dva operandy. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mathlib_8h_a81f3050f4fd1cfd66dc119f6b4ef7d3a}{lib\+\_\+mul}} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Funkce, která vynásobí dva operandy. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mathlib_8h_a1d583ead7f80f6c8afef9f5c0e64ec5a}{lib\+\_\+div}} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Funkce, která vydělí dva operandy. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mathlib_8h_a313c1d5cbb27e6961bc2f718982eb738}{lib\+\_\+fact}} (double num)
+\begin{DoxyCompactList}\small\item\em Funkce, která vypočítá faktoriál čísla. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mathlib_8h_a52f72a2ac790b2cd33ac54818bf25e40}{lib\+\_\+pow}} (double num, double exp)
+\begin{DoxyCompactList}\small\item\em Funkce, která umocní první operand na druhý \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mathlib_8h_aed5b2ba290d8ddd23ea66a43a774f801}{lib\+\_\+root}} (double num, double root)
+\begin{DoxyCompactList}\small\item\em Funkce, která odmocní první operand druhým. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mathlib_8h_a17ed5997998539a18469f88e13927b57}{lib\+\_\+mod}} (double num1, double num2)
+\begin{DoxyCompactList}\small\item\em Funkce, která vypočítá modulo čísla. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailní popis}
+Hlavičkový soubor pro matematickou knihovnu kalkulačky. 
+
+\begin{DoxyAuthor}{Autor}
+Rogalo 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Dokumentace funkcí}
+\mbox{\Hypertarget{mathlib_8h_af6413b1a47a3e17fb4562b114cace645}\label{mathlib_8h_af6413b1a47a3e17fb4562b114cace645}} 
+\index{mathlib.h@{mathlib.h}!lib\_add@{lib\_add}}
+\index{lib\_add@{lib\_add}!mathlib.h@{mathlib.h}}
+\doxysubsubsection{\texorpdfstring{lib\_add()}{lib\_add()}}
+{\footnotesize\ttfamily double lib\+\_\+add (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Funkce, která sečte dva operandy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em num1} & První operand \\
+\hline
+{\em num2} & Druhý operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+Součet num1 a num2 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 24 v souboru mathlib.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                                           \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keywordtype}{double} result = num1 + num2;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{mathlib_8h_a1d583ead7f80f6c8afef9f5c0e64ec5a}\label{mathlib_8h_a1d583ead7f80f6c8afef9f5c0e64ec5a}} 
+\index{mathlib.h@{mathlib.h}!lib\_div@{lib\_div}}
+\index{lib\_div@{lib\_div}!mathlib.h@{mathlib.h}}
+\doxysubsubsection{\texorpdfstring{lib\_div()}{lib\_div()}}
+{\footnotesize\ttfamily double lib\+\_\+div (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Funkce, která vydělí dva operandy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em num1} & První operand \\
+\hline
+{\em num2} & Druhý operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+Podíl num1 a num2 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 67 v souboru mathlib.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67                                           \{}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keywordflow}{if} (num2 == 0) \{}
+\DoxyCodeLine{70         \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_DIV);}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{double} result = num1 / num2;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{mathlib_8h_a313c1d5cbb27e6961bc2f718982eb738}\label{mathlib_8h_a313c1d5cbb27e6961bc2f718982eb738}} 
+\index{mathlib.h@{mathlib.h}!lib\_fact@{lib\_fact}}
+\index{lib\_fact@{lib\_fact}!mathlib.h@{mathlib.h}}
+\doxysubsubsection{\texorpdfstring{lib\_fact()}{lib\_fact()}}
+{\footnotesize\ttfamily double lib\+\_\+fact (\begin{DoxyParamCaption}\item[{double}]{num }\end{DoxyParamCaption})}
+
+
+
+Funkce, která vypočítá faktoriál čísla. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em num} & Číslo, kterému se vypočítá faktoriál \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+Faktoriál num 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 127 v souboru mathlib.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127                              \{}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \textcolor{keywordflow}{if} (num < 0) \{}
+\DoxyCodeLine{130         \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_OTHER);}
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133     \textcolor{comment}{// maximal supported number should be determined based on the GUI}}
+\DoxyCodeLine{134     \textcolor{keywordflow}{if} (num == 0) \{}
+\DoxyCodeLine{135         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{136     \}}
+\DoxyCodeLine{137     \textcolor{keywordflow}{return} num * \mbox{\hyperlink{mathlib_8cpp_a313c1d5cbb27e6961bc2f718982eb738}{lib\_fact}}(num -\/ 1);}
+\DoxyCodeLine{138 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{mathlib_8h_a17ed5997998539a18469f88e13927b57}\label{mathlib_8h_a17ed5997998539a18469f88e13927b57}} 
+\index{mathlib.h@{mathlib.h}!lib\_mod@{lib\_mod}}
+\index{lib\_mod@{lib\_mod}!mathlib.h@{mathlib.h}}
+\doxysubsubsection{\texorpdfstring{lib\_mod()}{lib\_mod()}}
+{\footnotesize\ttfamily double lib\+\_\+mod (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Funkce, která vypočítá modulo čísla. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em num1} & První operand \\
+\hline
+{\em num2} & Druhý operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+Modulo num1 a num2 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 147 v souboru mathlib.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{147                                           \{}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{keywordflow}{if} (num2 == 0) \{}
+\DoxyCodeLine{150         \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_DIV);}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152     \textcolor{keywordflow}{return} fmod(num1, num2);}
+\DoxyCodeLine{153 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{mathlib_8h_a81f3050f4fd1cfd66dc119f6b4ef7d3a}\label{mathlib_8h_a81f3050f4fd1cfd66dc119f6b4ef7d3a}} 
+\index{mathlib.h@{mathlib.h}!lib\_mul@{lib\_mul}}
+\index{lib\_mul@{lib\_mul}!mathlib.h@{mathlib.h}}
+\doxysubsubsection{\texorpdfstring{lib\_mul()}{lib\_mul()}}
+{\footnotesize\ttfamily double lib\+\_\+mul (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Funkce, která vynásobí dva operandy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em num1} & První operand \\
+\hline
+{\em num2} & Druhý operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+Součin num1 a num2 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 53 v souboru mathlib.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{53                                           \{}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{double} result = num1 * num2;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{mathlib_8h_a52f72a2ac790b2cd33ac54818bf25e40}\label{mathlib_8h_a52f72a2ac790b2cd33ac54818bf25e40}} 
+\index{mathlib.h@{mathlib.h}!lib\_pow@{lib\_pow}}
+\index{lib\_pow@{lib\_pow}!mathlib.h@{mathlib.h}}
+\doxysubsubsection{\texorpdfstring{lib\_pow()}{lib\_pow()}}
+{\footnotesize\ttfamily double lib\+\_\+pow (\begin{DoxyParamCaption}\item[{double}]{num,  }\item[{double}]{exp }\end{DoxyParamCaption})}
+
+
+
+Funkce, která umocní první operand na druhý 
+
+
+\begin{DoxyParams}{Parametry}
+{\em num} & První operand = mocněnec \\
+\hline
+{\em exp} & Druhý operand = mocnitel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+První operand umocněný na druhý 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 84 v souboru mathlib.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84                                         \{}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{int}(exp) != exp) \{}
+\DoxyCodeLine{87         \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_OTHER);}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89     \textcolor{keywordtype}{double} result = pow(num, exp);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{92 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{mathlib_8h_aed5b2ba290d8ddd23ea66a43a774f801}\label{mathlib_8h_aed5b2ba290d8ddd23ea66a43a774f801}} 
+\index{mathlib.h@{mathlib.h}!lib\_root@{lib\_root}}
+\index{lib\_root@{lib\_root}!mathlib.h@{mathlib.h}}
+\doxysubsubsection{\texorpdfstring{lib\_root()}{lib\_root()}}
+{\footnotesize\ttfamily double lib\+\_\+root (\begin{DoxyParamCaption}\item[{double}]{num,  }\item[{double}]{root }\end{DoxyParamCaption})}
+
+
+
+Funkce, která odmocní první operand druhým. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em num} & Odmocňované číslo \\
+\hline
+{\em root} & Odmocnitel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+Obecná odmocnina 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 101 v souboru mathlib.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{101                                           \{}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordflow}{if} (root == 0) \{}
+\DoxyCodeLine{104         \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_OTHER);}
+\DoxyCodeLine{105     \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keywordflow}{if} (num < 0 \&\& std::fmod(root, 2) == 0) \{}
+\DoxyCodeLine{108         \textcolor{keywordflow}{throw} std::runtime\_error(ERROR\_OTHER);}
+\DoxyCodeLine{109     \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keywordflow}{if}(num < 0 \&\& std::fmod(root, 2) != 0) \{}
+\DoxyCodeLine{112         \textcolor{keywordtype}{double} result = -\/std::pow(-\/num, 1.0/root);}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{115     \}}
+\DoxyCodeLine{116     \textcolor{keywordtype}{double} result = std::pow(num, 1.0/root);}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{119 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{mathlib_8h_ada04beac0cfbb842690d63a3af33dce3}\label{mathlib_8h_ada04beac0cfbb842690d63a3af33dce3}} 
+\index{mathlib.h@{mathlib.h}!lib\_sub@{lib\_sub}}
+\index{lib\_sub@{lib\_sub}!mathlib.h@{mathlib.h}}
+\doxysubsubsection{\texorpdfstring{lib\_sub()}{lib\_sub()}}
+{\footnotesize\ttfamily double lib\+\_\+sub (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+
+
+Funkce, která odečte dva operandy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em num1} & První operand \\
+\hline
+{\em num2} & Druhý operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+Rozdíl num1 a num2 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 38 v souboru mathlib.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38                                           \{}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{double} result = num1 -\/ num2;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
