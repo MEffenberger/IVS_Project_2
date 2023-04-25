@@ -1,0 +1,8 @@
+V průběhu vývoje jsme se od původního plánu odchýlili v těchto věcech:
+
+    1) Z původního plánu, že jednotlivec bude kontrolovat jednotlivce jsme museli upustit,
+       jelikož se ukázalo, že jednotlivé části projektu jsou provázány do takové míry, 
+       že všichni kontrolovali všechno  
+
+    2) Na začátku byly naplánovány 2 schůze (uprostřed a na konci vývoje), protože ale neustále probíhala
+       integrace všech součástí, bylo nutné těchto schůzí udělat více (nakonec byly 4)
