@@ -1,3 +1,14 @@
+sudo dpkg -i calc_01_amd64.deb 
+Vybírá se dosud nevybraný balík calc.
+(Načítá se databáze … nyní je nainstalováno 178213 souborů a adresářů.)
+Připravuje se nahrazení calc_01_amd64.deb …
+dpkg: chyba při zpracovávání archivu calc_01_amd64.deb (--install):
+ podproces skript z nového balíku calc: pre-installation vrátil chybový návratový stav 1
+Při zpracování nastaly chyby:
+ calc_01_amd64.deb
+
+
+
 ivs@ivs-vm:~/Plocha/Kalkulacka/src$ chmod +x ./install.sh
 ivs@ivs-vm:~/Plocha/Kalkulacka/src$ ./install.sh 
 [sudo] heslo pro ivs: 
