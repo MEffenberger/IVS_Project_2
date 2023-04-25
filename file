@@ -231,4 +231,9 @@ Zpracovávají se spouštěče pro balík gnome-menus (3.36.0-1ubuntu3) …
 Zpracovávají se spouštěče pro balík desktop-file-utils (0.26-1ubuntu3) …
 Při zpracování nastaly chyby:
  calc
+ 
+ sudo apt update
+sudo apt install libqt5core5a libqt5gui5 libqt5widgets5 libdouble-conversion3 libpcre2-16-0 libmd4c0 libqt5dbus5 libqt5network5 libxcb-xinerama0 libxcb-xinput0 libqt5svg5 qt5-gtk-platformtheme
+sudo dpkg -i calc_01_amd64.deb
+
 
