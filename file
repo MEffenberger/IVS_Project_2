@@ -191,4 +191,44 @@ Zpracovávají se spouštěče pro balík desktop-file-utils (0.26-1ubuntu3) …
 Při zpracování nastaly chyby:
  calc
 
+ivs@ivs-vm:~/Stažené$ sudo dpkg -i calc_01_amd64.deb 
+[sudo] heslo pro ivs: 
+Vybírá se dosud nevybraný balík calc.
+(Načítá se databáze … nyní je nainstalováno 177298 souborů a adresářů.)
+Připravuje se nahrazení calc_01_amd64.deb …
+Rozbaluje se calc (01) …
+dpkg: nesplněné závislosti zamezily konfiguraci balíku calc:
+ calc závisí na libqt5core5a (>= 5.15.1); avšak:
+  Balík libqt5core5a není nainstalován.
+ calc závisí na libqt5gui5 (>= 5.0.2) | libqt5gui5-gles (>= 5.0.2); avšak:
+  Balík libqt5gui5 není nainstalován.
+  Balík libqt5gui5-gles není nainstalován.
+ calc závisí na libqt5widgets5 (>= 5.0.2); avšak:
+  Balík libqt5widgets5 není nainstalován.
+ calc závisí na libdouble-conversion3; avšak:
+  Balík libdouble-conversion3 není nainstalován.
+ calc závisí na libpcre2-16-0; avšak:
+  Balík libpcre2-16-0 není nainstalován.
+ calc závisí na libmd4c0; avšak:
+  Balík libmd4c0 není nainstalován.
+ calc závisí na libqt5dbus5; avšak:
+  Balík libqt5dbus5 není nainstalován.
+ calc závisí na libqt5network5; avšak:
+  Balík libqt5network5 není nainstalován.
+ calc závisí na libxcb-xinerama0; avšak:
+  Balík libxcb-xinerama0 není nainstalován.
+ calc závisí na libxcb-xinput0; avšak:
+  Balík libxcb-xinput0 není nainstalován.
+ calc závisí na libqt5svg5; avšak:
+  Balík libqt5svg5 není nainstalován.
+ calc závisí na qt5-gtk-platformtheme; avšak:
+  Balík qt5-gtk-platformtheme není nainstalován.
+
+dpkg: chyba při zpracovávání balíku calc (--install):
+ problém se závislostmi - nechávám nezkonfigurované
+Zpracovávají se spouštěče pro balík mailcap (3.70+nmu1ubuntu1) …
+Zpracovávají se spouštěče pro balík gnome-menus (3.36.0-1ubuntu3) …
+Zpracovávají se spouštěče pro balík desktop-file-utils (0.26-1ubuntu3) …
+Při zpracování nastaly chyby:
+ calc
 
