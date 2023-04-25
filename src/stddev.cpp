@@ -15,6 +15,10 @@
 
 using namespace std;
 
+/**
+ * @brief Funkce pro výpočet směrodatné odchylky
+ * @return 0 pokud vše proběhlo úspěšně, -1 pokud nebylo zadáno žádné číslo
+ */
 int main() {
     //dekarace potřebných proměnnných
     double number;
@@ -30,7 +34,12 @@ int main() {
         sum_sq = lib_add(sum_sq, lib_pow(number, 2)); //výpočet součtu druhých mocnin čísel
         count = lib_add(count, 1); //inkrementace čítače celkového počtu čísel
     }
-
+    //chyba pokud není zadáno žádné číslo
+    if(count == 0){
+        fprintf(stderr, "Chyba, nezadano zadne cislo.\n");
+        return -1;
+    }
+    
     double mean = lib_div(sum, count); // výpočet průměru 
     var = lib_sub(sum_sq, lib_mul(lib_pow(mean, 2),count)); //výpočet rozptylu
     var = lib_div(var, count); // vydělení rozptylu celkovým počtem čísel
