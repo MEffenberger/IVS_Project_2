@@ -24,9 +24,7 @@
 double lib_add (double num1, double num2) {
 
     double result = num1 + num2;
-    if (result > DBL_MAX || result < DBL_MIN) {
-        throw std::overflow_error(ERROR_OUT_OF_RANGE);
-    }
+
     return result;
 }
 
@@ -41,9 +39,7 @@ double lib_sub (double num1, double num2) {
 
 
     double result = num1 - num2;
-    if (result > DBL_MAX || result < DBL_MIN) {
-        throw std::overflow_error(ERROR_OUT_OF_RANGE);
-    }
+
     return result;
 }
 
@@ -57,9 +53,7 @@ double lib_sub (double num1, double num2) {
 double lib_mul (double num1, double num2) {
 
     double result = num1 * num2;
-    if (result > DBL_MAX || result < DBL_MIN) {
-        throw std::overflow_error(ERROR_OUT_OF_RANGE);
-    }
+
     return result;
 }
 
@@ -77,9 +71,7 @@ double lib_div (double num1, double num2) {
     }
 
     double result = num1 / num2;
-    if (result > DBL_MAX || result < DBL_MIN) {
-        throw std::overflow_error(ERROR_OUT_OF_RANGE);
-    }
+
     return result;
 }
 
@@ -95,9 +87,7 @@ double lib_pow (double num, double exp) {
         throw std::runtime_error(ERROR_OTHER);
     }
     double result = pow(num, exp);
-    if (result > DBL_MAX || result < DBL_MIN) {
-        throw std::overflow_error(ERROR_OUT_OF_RANGE);
-    }
+
     return result;
 }
 
@@ -120,15 +110,11 @@ double lib_root (double num, double root) {
 
     if(num < 0 && std::fmod(root, 2) != 0) {
         double result = -std::pow(-num, 1.0/root);
-        if (result > DBL_MAX || result < DBL_MIN) {
-            throw std::overflow_error(ERROR_OUT_OF_RANGE);
-        }
+
         return result;
     }
     double result = std::pow(num, 1.0/root);
-    if (result > DBL_MAX || result < DBL_MIN) {
-        throw std::overflow_error(ERROR_OUT_OF_RANGE);
-    }
+
     return result;
 }
 
