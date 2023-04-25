@@ -2,7 +2,7 @@ TARGETS = doctests calc profile
 EXEC = calc
 SRC = arguments_parser.cpp doctests.cpp mathlib.cpp stddev.cpp
 OBJ = $(patsubst %.cpp,%.o,$(SRC))
-DESTDIR = calc-01
+DESTDIR = $(EXEC)-01
 INSFLAGS = -m 0755
 
 CXX = g++
