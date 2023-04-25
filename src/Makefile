@@ -28,7 +28,6 @@ clean:
 	rm -f *.o $(TARGETS) stddev && make clean -f QMakefile && rm -f .qmake.stash QMakefile
 
 pack:
-#zip file will pack all the files and directories from the parent directory recursively and will be created in the parent directory
 	cd .. && zip -r xeffen00_xvalik05_xhorut01_xhejni00.zip .
 
 test: doctests
