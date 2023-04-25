@@ -237,3 +237,487 @@ sudo apt install libqt5core5a libqt5gui5 libqt5widgets5 libdouble-conversion3 li
 sudo dpkg -i calc_01_amd64.deb
 
 
+ivs@ivs-vm:~/Stažené$ sudo dpkg -i calc_01_amd64.deb 
+[sudo] heslo pro ivs: 
+(Načítá se databáze … nyní je nainstalováno 178213 souborů a adresářů.)
+Připravuje se nahrazení calc_01_amd64.deb …
+Rozbaluje se calc (01) …
+Package: libice6
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 116
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libice
+Version: 2:1.0.10-1build2
+Depends: libbsd0 (>= 0.2.0), libc6 (>= 2.33), x11-common
+Description: X11 Inter-Client Exchange library
+ This package provides the main interface to the X11 Inter-Client Exchange
+ library, which allows for communication of data between X clients.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libICE
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Package: libxcb-icccm4
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 58
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: xcb-util-wm
+Version: 0.4.1-1.1build2
+Depends: libc6 (>= 2.2.5), libxcb1
+Description: utility libraries for X C Binding -- icccm
+ This package contains the library files needed to run software using
+ libxcb-icccm, providing client and window-manager helpers for ICCCM.
+ .
+ The xcb-util module provides a number of libraries which sit on top of
+ libxcb, the core X protocol library, and some of the extension
+ libraries. These experimental libraries provide convenience functions
+ and interfaces which make the raw X protocol more usable. Some of the
+ libraries also provide client-side code which is not strictly part of
+ the X protocol but which have traditionally been provided by Xlib.
+Homepage: https://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Package: libxcb-randr0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 106
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxcb
+Version: 1.14-3ubuntu3
+Depends: libc6 (>= 2.4), libxcb1 (>= 1.9.2)
+Description: X C Binding, randr extension
+ This package contains the library files needed to run software using
+ libxcb-randr, the randr extension for the X C Binding.
+ .
+ The XCB library provides an interface to the X Window System protocol,
+ designed to replace the Xlib interface.  XCB provides several advantages over
+ Xlib:
+ .
+  * Size: small library and lower memory footprint
+  * Latency hiding: batch several requests and wait for the replies later
+  * Direct protocol access: one-to-one mapping between interface and protocol
+  * Thread support: access XCB from multiple threads, with no explicit locking
+  * Easy creation of new extensions: automatically generates interface from
+    machine-parsable protocol descriptions
+Homepage: https://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+dpkg-query: balík „libqt5dbus5“ není nainstalován a není dostupná žádná informace
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+Package: libxcb-shape0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 37
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxcb
+Version: 1.14-3ubuntu3
+Depends: libc6 (>= 2.4), libxcb1
+Description: X C Binding, shape extension
+ This package contains the library files needed to run software using
+ libxcb-shape, the shape extension for the X C Binding.
+ .
+ The XCB library provides an interface to the X Window System protocol,
+ designed to replace the Xlib interface.  XCB provides several advantages over
+ Xlib:
+ .
+  * Size: small library and lower memory footprint
+  * Latency hiding: batch several requests and wait for the replies later
+  * Direct protocol access: one-to-one mapping between interface and protocol
+  * Thread support: access XCB from multiple threads, with no explicit locking
+  * Easy creation of new extensions: automatically generates interface from
+    machine-parsable protocol descriptions
+Homepage: https://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+dpkg-query: balík „libxcb-xinput0“ není nainstalován a není dostupná žádná informace
+dpkg-query: balík „libqt5network5“ není nainstalován a není dostupná žádná informace
+Package: libxcb-render-util0
+Status: install ok installed
+Priority: extra
+Section: libs
+Installed-Size: 51
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: xcb-util-renderutil
+Version: 0.3.9-1build3
+Depends: libc6 (>= 2.4), libxcb-render0, libxcb1
+Description: utility libraries for X C Binding -- render-util
+ This package contains the library files needed to run software using
+ libxcb-render-util, providing convenience functions for the Render extension.
+ .
+ The xcb-util module provides a number of libraries which sit on top of
+ libxcb, the core X protocol library, and some of the extension
+ libraries. These experimental libraries provide convenience functions
+ and interfaces which make the raw X protocol more usable. Some of the
+ libraries also provide client-side code which is not strictly part of
+ the X protocol but which have traditionally been provided by Xlib.
+Homepage: http://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Package: libxcb-xkb1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 157
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxcb
+Version: 1.14-3ubuntu3
+Depends: libc6 (>= 2.14), libxcb1
+Description: X C Binding, XKEYBOARD extension
+ This package contains the library files needed to run software using
+ libxcb-xkb, the XKEYBOARD extension for the X C Binding.
+ .
+ The XCB library provides an interface to the X Window System protocol,
+ designed to replace the Xlib interface.  XCB provides several advantages over
+ Xlib:
+ .
+  * Size: small library and lower memory footprint
+  * Latency hiding: batch several requests and wait for the replies later
+  * Direct protocol access: one-to-one mapping between interface and protocol
+  * Thread support: access XCB from multiple threads, with no explicit locking
+  * Easy creation of new extensions: automatically generates interface from
+    machine-parsable protocol descriptions
+Homepage: https://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+dpkg-query: balík „libpcre2-16-0“ není nainstalován a není dostupná žádná informace
+Package: libxcb-xfixes0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 60
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxcb
+Version: 1.14-3ubuntu3
+Depends: libc6 (>= 2.4), libxcb1
+Description: X C Binding, xfixes extension
+ This package contains the library files needed to run software using
+ libxcb-xfixes, the xfixes extension for the X C Binding.
+ .
+ The XCB library provides an interface to the X Window System protocol,
+ designed to replace the Xlib interface.  XCB provides several advantages over
+ Xlib:
+ .
+  * Size: small library and lower memory footprint
+  * Latency hiding: batch several requests and wait for the replies later
+  * Direct protocol access: one-to-one mapping between interface and protocol
+  * Thread support: access XCB from multiple threads, with no explicit locking
+  * Easy creation of new extensions: automatically generates interface from
+    machine-parsable protocol descriptions
+Homepage: https://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+Package: libinput10
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 365
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libinput
+Version: 1.20.0-1ubuntu0.2
+Depends: libc6 (>= 2.35), libevdev2 (>= 1.10.0), libmtdev1 (>= 1.1.0), libudev1 (>= 183), libwacom9 (>= 2.0.0), libinput-bin (>= 1.20.0-1ubuntu0.2)
+Description: input device management and event handling library - shared library
+ libinput is a library that handles input devices for display servers and
+ other applications that need to directly deal with input devices.
+ .
+ It provides device detection, device handling, input device event
+ processing and abstraction to minimize the amount of custom input
+ code the user of libinput needs to provide the common set of
+ functionality that users expect.
+ .
+ This package includes the shared library.
+Homepage: http://www.freedesktop.org/wiki/Software/libinput/
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Package: libxcb-image0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 36
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: xcb-util-image
+Version: 0.4.0-2
+Depends: libc6 (>= 2.14), libxcb-shm0, libxcb-util1 (>= 0.4.0), libxcb1
+Description: utility libraries for X C Binding -- image
+ This package contains the library files needed to run software using
+ libxcb-image, providing port of Xlib's XImage and XShmImage functions.
+ .
+ The xcb-util module provides a number of libraries which sit on top of
+ libxcb, the core X protocol library, and some of the extension
+ libraries. These experimental libraries provide convenience functions
+ and interfaces which make the raw X protocol more usable. Some of the
+ libraries also provide client-side code which is not strictly part of
+ the X protocol but which have traditionally been provided by Xlib.
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Homepage: https://xcb.freedesktop.org
+Package: libmtdev1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 56
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: mtdev
+Version: 1.1.6-1build4
+Depends: libc6 (>= 2.4)
+Description: Multitouch Protocol Translation Library - shared library
+ libmtdev is a library for translating evdev multitouch events using the legacy
+ protocol to the new multitouch slots protocol. This is necessary for kernel
+ drivers that have not been updated to use the newer protocol.
+Homepage: http://bitmath.org/code/mtdev/
+Original-Maintainer: Nobuhiro Iwamatsu <iwamatsu@debian.org>
+Package: libxkbcommon-x11-0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 59
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxkbcommon
+Version: 1.4.0-1
+Depends: libxkbcommon0 (= 1.4.0-1), libc6 (>= 2.4), libxcb-xkb1, libxcb1 (>= 1.6)
+Description: library to create keymaps with the XKB X11 protocol
+ This package provides an add-on library called xkbcommon-x11, to support
+ creating keymaps with the XKB X11 protocol, by querying the X server directly.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This module can be found at
+ https://github.com/xkbcommon/libxkbcommon.git
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Homepage: http://www.xkbcommon.org/
+Package: libsm6
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 55
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libsm
+Version: 2:1.2.3-1build2
+Depends: libc6 (>= 2.14), libice6 (>= 1:1.0.0), libuuid1 (>= 2.16)
+Description: X11 Session Management library
+ This package provides the main interface to the X11 Session Management
+ library, which allows for applications to both manage sessions, and make use
+ of session managers to save and restore their state for later use.
+ .
+ This module can be found at
+ git://anongit.freedesktop.org/git/xorg/lib/libSM
+Homepage: https://www.x.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Package: libgl1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 653
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libglvnd
+Version: 1.4.0-1
+Depends: libc6 (>= 2.14), libglvnd0 (= 1.4.0-1), libglx0 (= 1.4.0-1)
+Description: Vendor neutral GL dispatch library -- legacy GL support
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains support for old libGL for compatibility reasons.
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Package: libxcb-sync1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 59
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxcb
+Version: 1.14-3ubuntu3
+Depends: libc6 (>= 2.14), libxcb1
+Description: X C Binding, sync extension
+ This package contains the library files needed to run software using
+ libxcb-sync, the sync extension for the X C Binding.
+ .
+ The XCB library provides an interface to the X Window System protocol,
+ designed to replace the Xlib interface.  XCB provides several advantages over
+ Xlib:
+ .
+  * Size: small library and lower memory footprint
+  * Latency hiding: batch several requests and wait for the replies later
+  * Direct protocol access: one-to-one mapping between interface and protocol
+  * Thread support: access XCB from multiple threads, with no explicit locking
+  * Easy creation of new extensions: automatically generates interface from
+    machine-parsable protocol descriptions
+Homepage: https://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+dpkg-query: balík „libxcb-xinerama0“ není nainstalován a není dostupná žádná informace
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+dpkg-query: balík „libmd4c0“ není nainstalován a není dostupná žádná informace
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+dpkg-query: balík „libdouble-conversion3“ není nainstalován a není dostupná žádná informace
+Package: libxcb-keysyms1
+Status: install ok installed
+Priority: extra
+Section: libs
+Installed-Size: 42
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: xcb-util-keysyms
+Version: 0.4.0-1build3
+Depends: libc6 (>= 2.2.5), libxcb1
+Description: utility libraries for X C Binding -- keysyms
+ This package contains the library files needed to run software using
+ libxcb-keysyms, providing standard X key constants and conversion to/from
+ keycodes.
+ .
+ The xcb-util module provides a number of libraries which sit on top of
+ libxcb, the core X protocol library, and some of the extension
+ libraries. These experimental libraries provide convenience functions
+ and interfaces which make the raw X protocol more usable. Some of the
+ libraries also provide client-side code which is not strictly part of
+ the X protocol but which have traditionally been provided by Xlib.
+Homepage: http://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Package: libgbm1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 145
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: mesa
+Version: 22.2.5-0ubuntu0.1~22.04.1
+Depends: libc6 (>= 2.34), libdrm2 (>= 2.4.75), libexpat1 (>= 2.0.1), libwayland-server0 (>= 1.15.0)
+Description: generic buffer management API -- runtime
+ This package contains the GBM buffer management library.  It provides a
+ mechanism for allocating buffers for graphics rendering tied to Mesa.
+ .
+ GBM is intended to be used as a native platform for EGL on drm or openwfd.
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Homepage: https://mesa3d.org/
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+dpkg-query: balík „qt5-qmake“ není nainstalován a není dostupná žádná informace
+Package: libxkbcommon0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 302
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxkbcommon
+Version: 1.4.0-1
+Depends: xkb-data, libc6 (>= 2.33)
+Description: library interface to the XKB compiler - shared library
+ This package provides a library to handle keyboard descriptions, including
+ loading them from disk, parsing them and handling their state. It's mainly
+ meant for client toolkits, window systems, and other system applications;
+ currently that includes Wayland, kmscon, GTK+, Clutter, and more.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This module can be found at
+ https://github.com/xkbcommon/libxkbcommon.git
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Homepage: http://www.xkbcommon.org/
+Package: libegl1
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 100
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libglvnd
+Version: 1.4.0-1
+Depends: libc6 (>= 2.34), libglvnd0 (= 1.4.0-1), libegl-mesa0
+Description: Vendor neutral GL dispatch library -- EGL support
+ This is an implementation of the vendor-neutral dispatch layer for
+ arbitrating OpenGL API calls between multiple vendors on a per-screen basis.
+ .
+ This package contains support for EGL.
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Homepage: https://gitlab.freedesktop.org/glvnd/libglvnd
+Package: libxcb-glx0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 154
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: libxcb
+Version: 1.14-3ubuntu3
+Depends: libc6 (>= 2.4), libxcb1
+Description: X C Binding, glx extension
+ This package contains the library files needed to run software using
+ libxcb-glx, the glx extension for the X C Binding.
+ .
+ The XCB library provides an interface to the X Window System protocol,
+ designed to replace the Xlib interface.  XCB provides several advantages over
+ Xlib:
+ .
+  * Size: small library and lower memory footprint
+  * Latency hiding: batch several requests and wait for the replies later
+  * Direct protocol access: one-to-one mapping between interface and protocol
+  * Thread support: access XCB from multiple threads, with no explicit locking
+  * Easy creation of new extensions: automatically generates interface from
+    machine-parsable protocol descriptions
+Homepage: https://xcb.freedesktop.org
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+dpkg-query: balík „qtbase5-dev“ není nainstalován a není dostupná žádná informace
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+dpkg-query: balík „qt5-gtk-platformtheme“ není nainstalován a není dostupná žádná informace
+dpkg-query: balík „libqt5svg5“ není nainstalován a není dostupná žádná informace
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+Použijte dpkg --info (= dpkg-deb --info) k prozkoumání archivu.
+dpkg: nesplněné závislosti zamezily konfiguraci balíku calc:
+ calc závisí na libqt5core5a (>= 5.15.1); avšak:
+  Balík libqt5core5a není nainstalován.
+ calc závisí na libqt5gui5 (>= 5.0.2) | libqt5gui5-gles (>= 5.0.2); avšak:
+  Balík libqt5gui5 není nainstalován.
+  Balík libqt5gui5-gles není nainstalován.
+ calc závisí na libqt5widgets5 (>= 5.0.2); avšak:
+  Balík libqt5widgets5 není nainstalován.
+ calc závisí na qtbase5-dev; avšak:
+  Balík qtbase5-dev není nainstalován.
+
+dpkg: chyba při zpracovávání balíku calc (--install):
+ problém se závislostmi - nechávám nezkonfigurované
+Zpracovávají se spouštěče pro balík mailcap (3.70+nmu1ubuntu1) …
+Zpracovávají se spouštěče pro balík gnome-menus (3.36.0-1ubuntu3) …
+Zpracovávají se spouštěče pro balík desktop-file-utils (0.26-1ubuntu3) …
+Při zpracování nastaly chyby:
+ calc
+
+
+
