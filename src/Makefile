@@ -20,11 +20,6 @@ $(OBJ): $(SRC)
 $(EXEC):
 	if ! dpkg-query -W qtbase5-dev; then sudo apt-get install qtbase5-dev; fi
 	qmake && make -f QMakefile
-	if ! dpkg-query -W binutils; then sudo apt-get install binutils; fi
-	objcopy --add-section .myicon=calcicon.png calc calc-with-icon
-	xdg-icon-resource install --context mimetypes --size 128 calcicon.png calc-with-icon
-
-
 
 doctests: doctests.o mathlib.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
