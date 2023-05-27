@@ -42,6 +42,7 @@ int main() {
     
     double mean = lib_div(sum, count); // výpočet průměru 
     var = lib_sub(sum_sq, lib_mul(lib_pow(mean, 2),count)); //výpočet rozptylu
+    //OPRAVA: Nyni odecteni cisla 1 od celkoveho poctu cisel, ktere zajisti spravny vysledek
     var = lib_div(var, lib_sub(count, 1)); // vydělení rozptylu celkovým počtem čísel
     SDeviation = lib_root(var, 2); //výpočet odmocniny z rozptylu 
     
